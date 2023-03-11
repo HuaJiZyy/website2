@@ -10,11 +10,16 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      loadSidebar: true,
-      name: '你想怎么爬?',
-      themeColor: '#3F51B5',
-      // logo: '222test.png',
-      // mergeNavbar: true,  //小屏设备
+    loadSidebar: true,
+    name: '你想怎么爬?',
+    themeColor: '#3F51B5',
+    // logo: '222test.png',
+    // mergeNavbar: true,  //小屏设备
+    formatUpdated: '{MM}/{DD} {HH}:{mm}',
+    formatUpdated: function(time) {
+      return time;
+    },
+    notFoundPage: true,
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
