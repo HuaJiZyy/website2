@@ -1,16 +1,11 @@
 > 友情链接:
 
 [荆泽旭的主页](https://jingzexu.top)
-
-
-
-> 个人链接:
-
-[STEAM](https://steamcommunity.com/id/HuaJiZyy/)
+<!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
 
 [Twitter](https://twitter.com/HuaJiZyy)
 
 [bilibili](https://space.bilibili.com/363122611)
 
-[Zhihu](https://www.zhihu.com/people/zyy-50-79)
+[Zhihu](https://www.zhihu.com/people/zyy-50-79) -->
 
