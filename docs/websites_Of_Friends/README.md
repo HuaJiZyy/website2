@@ -1,6 +1,9 @@
 > 友情链接:
 
 [荆泽旭的主页](https://jingzexu.top)
+
+[杨希杰的个人网站](https://yang-xijie.github.io/)
+
 <!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
 
 [Twitter](https://twitter.com/HuaJiZyy)
