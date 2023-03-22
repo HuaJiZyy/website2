@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"> -->
+  <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
 </head>
 <body>
   <div id="app"></div>
@@ -13,8 +15,8 @@
     loadSidebar: true,
     // name: '张义洋的个人主页',
     themeColor: '#3F51B5',
-    // logo: '222test.png',
-    // mergeNavbar: true,  //小屏设备
+    logo: 'icon.svg',
+    // mergeNavbar: true,  //小屏设备合并导航栏到侧边栏
     formatUpdated: '{MM}/{DD} {HH}:{mm}',
     formatUpdated: function(time) {
       return time;
@@ -26,3 +28,20 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
+
+<!-- 以下为gittalk代码 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: 'Github Application Client ID',
+    clientSecret: 'Github Application Client Secret',
+    repo: 'Github repo',
+    owner: 'Github repo owner',
+    admin: ['Github repo collaborators, only these guys can initialize github issues'],
+    // facebook-like distraction free mode
+    distractionFreeMode: false
+  })
+</script>

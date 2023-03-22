@@ -4,6 +4,13 @@
 
 [杨希杰的个人网站](https://yang-xijie.github.io/)
 
+[大连理工大学软件学院资源库](https://github.com/NAOSI-DLUT/DLUT_SE_Courses)
+
+[docsify](https://docsify.js.org/)
+
+
+
+
 <!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
 
 [Twitter](https://twitter.com/HuaJiZyy)
