@@ -1,0 +1,104 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA计算器</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9MvcJ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>GPA计算器</h1>
+        <p>请上传一个TXT文件，格式为：课程名 学分 分数</p>
+        <input type="file" id="fileInput" accept=".txt">
+        <table id="courseTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>课程名</th>
+                    <th>分数</th>
+                    <th>学分</th>
+                </tr>
+            </thead>
+            <tbody id="courseTableBody">
+            </tbody>
+        </table>
+        <h2 id="result"></h2>
+    </div>
+    
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const result = document.getElementById('result');
+        const courseTableBody = document.getElementById('courseTableBody');
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = () => {
+                const content = reader.result;
+                const lines = content.split('\n');
+                let totalCredits = 0;
+                let totalWeightedScore = 0;
+
+                courseTableBody.innerHTML = '';
+
+                for (let line of lines) {
+                    const [course, scoreStr, creditsStr] = line.split(' ');
+                    const credits = parseFloat(creditsStr);
+                    const score1 = parseFloat(scoreStr);
+                    if (Number.isNaN(credits) || Number.isNaN(score)) {
+                        continue;
+                    }
+
+                    var score = score1;
+
+                    if (score >= 90) {
+                        score = 4.0;
+                    } else if (score >= 80) {
+                        score = 3.0;
+                    } else if (score >= 70) {
+                        score = 2.0;
+                    } else if (score >= 60) {
+                        score = 1.0;
+                    } else {
+                        score = 0;
+                    }
+                    totalCredits += credits;
+                    totalWeightedScore += credits * score;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${course}</td>
+                        <td>${score1}</td>
+                        <td>${credits}</td>
+                    `;
+                    courseTableBody.appendChild(row);
+                }
+
+                const gpa = (totalWeightedScore / totalCredits).toFixed(2);
+                result.textContent = `总GPA：${gpa}`;
+            };
+
+            reader.readAsText(file, 'UTF-8');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSGFpoO9Vc_AESmMmUfV1HqlVC0jSzE7t_ILrfr2fY7K0g2Xpdb7"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-xs1lxBFuh87HUDM-H1TGgozjGn7LgDbTU3C9K97iRvmRhsAuv7Wnv8D3Lb3w3w//F"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9MvcJ4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
