@@ -25,3 +25,4 @@
 * [友情链接](websites_Of_Friends/)
 
 * [GPA计算器](GPA_calculator/)
+* [GPA计算器2](GPA_calculator2/)

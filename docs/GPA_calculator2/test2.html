@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA计ww算器</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9MvcJ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* 隐藏文件上传按钮 */
+        #fileInput {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GPA计算器</h1>
+        <p>快捷使用方法: 上传一个txt或Excel文件, 每行格式为: 课程名 学分 分数</p>
+        <input type="file" id="fileInput" accept=".txt, .xlsx, .xls" onchange="handleFileUpload(event)">
+        <button onclick="openFileDialog()" class="btn btn-primary">上传文件</button>
+        <p>或者在输入框中手动输入课程信息: </p>
+        <h2 id="result"></h2>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                导出成绩
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" onclick="exportGrades()">导出成绩为txt文件</a>
+                <a class="dropdown-item" href="#" onclick="exportToXLSX()">导出成绩为XLSX文件</a>
+            </div>
+        </div>
+        <table id="courseTable" class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>课程名(选填)</th>
+                    <th>分数</th>
+                    <th>学分</th>
+                </tr>
+            </thead>
+            <tbody id="courseTableBody">
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <button onclick="addRows(1)">添加1行</button>
+                <button onclick="addRows(10)">添加10行</button>
+                </tr>
+                <button onclick="calculateGPA()">计算GPA</button>
+                <button onclick="exportGrades()">导出成绩到txt文件</button>
+                <button onclick="exportToXLSX()">导出成绩到Excel文件</button>
+                <!-- 添加更多的 <tr> 元素以增加行数 -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+        //一些全局变量
+        const fileInput = document.getElementById('fileInput');
+        const result = document.getElementById('result');
+        const courseTableBody = document.getElementById('courseTableBody');
+        let totalCredits = 0;
+        let totalWeightedGPA = 0;
+        let totalWeightedScore = 0;
+
+        //文件处理
+        function openFileDialog() {
+            const fileInput = document.getElementById("fileInput");
+            fileInput.click();
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+
+            if (file.name.endsWith('.txt')) {
+                // 处理txt文件的代码
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const content = reader.result;
+                    const lines = content.split('\n');
+                    courseTableBody.innerHTML = '';
+
+                    for (let line of lines) {
+                        const [course, scoreStr, creditsStr] = line.split(' ');
+                        const credits = parseFloat(creditsStr);
+                        const score = parseFloat(scoreStr);
+                        if (Number.isNaN(credits) || Number.isNaN(score)) {
+                            continue;
+                        }
+                        addCourse(course, score, credits);
+                    }
+                };
+                reader.readAsText(file, 'UTF-8');
+            }
+            //处理Excel文件的代码
+            else if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const sheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[sheetName];
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { raw: true, header: 1 });
+                    courseTableBody.innerHTML = '';
+
+                    for (let row of jsonData) {
+                        const course = row[0];
+                        const score = parseFloat(row[1]);
+                        const credits = parseFloat(row[2]);
+                        if (Number.isNaN(credits) || Number.isNaN(score)) {
+                            continue;
+                        }
+                        addCourse(course, score, credits);
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        }
+
+        //添加n行输入框
+        function addRows(n) {
+            const tableBody = document.getElementById("courseTableBody");
+
+            for (let j = 0; j < n; j++) {
+                const newRow = document.createElement("tr");
+
+                for (let i = 0; i < 3; i++) {
+                    const newCell = document.createElement("td");
+                    const inputBox = document.createElement("input");
+                    inputBox.type = "text";
+                    newCell.appendChild(inputBox);
+                    newRow.appendChild(newCell);
+                }
+
+                tableBody.appendChild(newRow);
+            }
+            hideResult();
+        }
+
+        //隐藏和显示GPA计算结果
+        function hideResult() {
+            const resultElement = document.getElementById("result");
+            resultElement.style.display = "none";
+        }
+        function showResult() {
+            const resultElement = document.getElementById("result");
+            resultElement.style.display = "block";
+        }
+
+        //计算GPA
+        function calculateGPA() {
+            totalCredits = 0;
+            totalWeightedGPA = 0;
+            totalWeightedScore = 0;
+            iterateRows();
+            var gpa = (totalWeightedGPA / totalCredits).toFixed(2);
+            var score = (totalWeightedScore / totalCredits).toFixed(2);
+            result.textContent = `GPA ${gpa} / 4.0, 加权平均分 ${score}`;
+            if (!isNaN(gpa) && !isNaN(score)) {
+                showResult();
+            }
+            else {
+                hideResult();
+            }
+        }
+
+        //遍历输入框
+        function iterateRows() {
+            const rows = document.querySelectorAll("#courseTableBody tr");
+
+
+            for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+                const row = rows[rowIndex];
+                const inputs = row.querySelectorAll("input[type='text']");
+                const [courseName, score, credits] = Array.from(inputs).map(input => input.value);
+
+                if (isNaN(score) || isNaN(credits)) {
+                    console.log(`行 ${rowIndex + 1}: 分数或学分输入无效`);
+                    // alert('请填写所有字段并确保输入的是数字');
+                    continue;
+                }
+                const numScore = Number(score);
+                const numCredits = Number(credits);
+
+                let GPA;
+                GPA = getGPA(numScore);
+                totalCredits += numCredits;
+                totalWeightedGPA += numCredits * GPA;
+                totalWeightedScore += numCredits * numScore;
+            }
+        }
+
+        //导出成绩单到txt文件
+        function exportGrades() {
+            const rows = document.querySelectorAll("#courseTableBody tr");
+            let data = '';
+
+            rows.forEach((row, rowIndex) => {
+                const inputs = row.querySelectorAll("input[type='text']");
+                const rowData = Array.from(inputs).map(input => input.value);
+                data += rowData.join(' ') + '\n';
+            });
+
+            const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'grades.txt';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+
+        //导出成绩单到Excel文件
+        function exportToXLSX() {
+            const rows = document.querySelectorAll("#courseTableBody tr");
+            const data = [];
+
+            rows.forEach((row, rowIndex) => {
+                const inputs = row.querySelectorAll("input[type='text']");
+                const rowData = Array.from(inputs).map(input => input.value);
+                data.push(rowData);
+            });
+
+            const worksheet = XLSX.utils.aoa_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Grades");
+
+            XLSX.writeFile(workbook, "grades.xlsx");
+        }
+
+        //从文件的每一行中添加课程
+        function addCourse(courseName, score, credits) {
+            const tableBody = document.getElementById("courseTableBody");
+            const newRow = document.createElement("tr");
+            const inputData = [courseName, score, credits];
+
+            for (let i = 0; i < 3; i++) {
+                const newCell = document.createElement("td");
+                const inputBox = document.createElement("input");
+                inputBox.type = "text";
+                inputBox.value = inputData[i];
+                newCell.appendChild(inputBox);
+                newRow.appendChild(newCell);
+            }
+            tableBody.appendChild(newRow);
+            hideResult();
+        }
+
+        //获取按某算法后生成的绩点, 默认0为标准4.0算法
+        function getGPA(numScore, method = 0) {
+            var GPA;
+            if (numScore >= 90) {
+                GPA = 4.0;
+            } else if (numScore >= 80) {
+                GPA = 3.0;
+            } else if (numScore >= 70) {
+                GPA = 2.0;
+            } else if (numScore >= 60) {
+                GPA = 1.0;
+            } else {
+                GPA = 0;
+            }
+            return GPA;
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMm6l54yl" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSS_GFpoO/owiZNQ+9q3GrK6J6D6wpsGLsg+aU5MWHAfM46hjnJ"
+        crossorigin="anonymous"></script>
+
+    <!-- Popper.js (necessary for Bootstrap's dropdowns and tooltips) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoJtKh7z7lGz7fuP4F8nfdFvAOA6Gg/z6Y5J6XqqyGXYM2ntXU"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMm6l54yl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</body>
+
+</html>
