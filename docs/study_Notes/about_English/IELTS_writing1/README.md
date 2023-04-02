@@ -1,7 +1,7 @@
 # 雅思小作文
 > 文章写于2019.8，如有错误，欢迎指正。
 
-1.动态单图   
+## 1.动态单图   
 ![img](1.jpg ':size=40%')  
 A glance at the table reveals the amount of waste production in six different countries throughout the 20 years from 1980 to 2000.
 
@@ -13,7 +13,7 @@ The amount of waste producted by US and Japan has showed an upward trend over th
 
 Korea managed to decrease its waste production to 19 million tonnes in 2000, yet the figure for Ireland showed a rapid growth from 0.6 in 1980 to 6 in 2000. The figure for Poland and Portugal remained stable. 
 
-2.动态单图  
+## 2.动态单图  
 ![img](2.jpg ':size=40%')  
 A glance at the bar chart reveals boys' and girls' time for 4 different sports by category.
 
@@ -23,7 +23,7 @@ Looking at the information in more details, we can see that nearly 20% of boys' 
 
 Swimming is the second most popular sport for both boys and girls. The proportion of boys playing basketball is just a bit higher than that of girls. However, there are another 4% of boys and 5% of girls, who have no interest in any of these four kinds of sports.
 
-3.地图  
+## 3.地图  
 ![img](3.jpg ':size=40%')  
 A glance at the map reveals that the layout of a park over the period from 1980 to now.
 
@@ -33,7 +33,7 @@ The bench has been enlarged in size, which extends northward. A play ground is l
 
 As the aforementioned analysis, the walls and gates don't exist now, in order to make tourists more convenient to enter the park. An addition picnic area is added on the north-east corner, where tourists can have barbecue on the chairs and desks. The forest there is declined in size.
 
-4.静态table  
+## 4.静态table  
 The table below shows the percentage of "very good" rated by first-year students.  
 ![img](4.jpg ':size=40%')
 
@@ -45,7 +45,7 @@ In terms of Pre-course information, 95% of commerce students manage to get "very
 
 In everyone of the three aspact, teaching, tutor and resources(print), it is the most difficult for law students to get "very good", especially in teaching, while 95% of students who study economics can get it, the same rate as commerce students. That might because law students who have only learnt for a year, are lack of teaching experience.
 
-5.流程图  
+## 5.流程图  
 ![img](5.jpg ':size=40%')  
 
 A glance at the diagram reveals the procedures of making soft cheese.
@@ -56,7 +56,7 @@ At the initial stage, milk is conbined with water, to form a mixed liquid. The m
 
 Once the mixture is fermentated, it is transfered into a evaporater, where the mixture is heated. In this stage, the mixture stays at 100℃ for 8 hours, after which it is cooled the second time, as the last procedure. The temperature is the same as stage 1, but lasts for longer, at 6 hours. Then soft cheese was finally made.
 
-6.多图  
+## 6.多图  
 The chart and graph show the categories of workforce in Australia and the unemployment within 3 group.
 
 ![img](6.jpg ':size=40%')  
@@ -72,7 +72,7 @@ Native Australians' proportion of workforce is up to 75%, which is far ahead of 
 
 In 1998, English-speaking people's unemployed rate was 8%, which was at its highest point through the five years, followed by the figure for native Australians, whose unemployed rate was 4%. Only 3% of non-English-speaking people faced unemployment in 1998, which was the least of all kinds of people. The unemployed rate of English-speaking as well as non-English-speaking people showed a stable decline over the five years, especially for English-speaking ones, whose figure in 2003 was only about 3%. After some increase, however, the figure for native Australians also decreased, at 2% in 2003.
 
-7.动态单图  
+## 7.动态单图  
 ![img](7.jpg ':size=40%')  
 
 A glance at the line chart reveals the sales of children's books, adult's fictions and education books by category, throughout the 5 years from 2002 to 2006.

@@ -11,4 +11,4 @@
 3. 总结会议记录/文章要点。
 * Can you give me a summary/outline of the following text/article, in bullet points?
 
-> 以上用法基于ChatGPT Engine 3.5
+> 以上用法基于ChatGPT Engine 3.5, 大多数内容已过时.
