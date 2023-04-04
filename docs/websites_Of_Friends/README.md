@@ -1,6 +1,6 @@
 > 友情链接:
 
-[荆泽旭的主页](https://jingzexu.top)
+[荆泽旭的主页(已挂)](https://jingzexu.top)
 
 [杨希杰的个人网站](https://yang-xijie.github.io/)
 
@@ -8,6 +8,7 @@
 
 [docsify](https://docsify.js.org/)
 
+[魔方小站](http://www.rubik.com.cn/)
 
 
 

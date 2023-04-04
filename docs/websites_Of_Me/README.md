@@ -1,0 +1,37 @@
+> 个人链接:
+
+* [bilibili](https://space.bilibili.com/363122611)
+
+* [豆瓣](https://www.douban.com/people/193538245/?_i=0604220lY7wWU_)
+
+* [Facebook](https://www.facebook.com/HuaJiZyy/)
+
+* [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
+
+* [Twitter](https://twitter.com/HuaJiZyy)
+
+* [知乎](https://www.zhihu.com/people/zyy-50-79)
+
+
+
+
+
+<!-- * [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkxMDEzNDgwMg==&scene=124#wechat_redirect)
+![img](wechat.jpg ':size=7%') -->
+
+<!-- <p style="display: flex; align-items: center;">
+  <img src="wechat.jpg" alt="your-image-description" style="margin-right: 10px;">
+  这里是你的文字
+</p> -->
+
+
+
+* 邮箱：  
+    * zyyjyw@gmail.com  
+    * zyyjyw@qq.com  
+    * zyyjyw@foxmail.com  
+    * zyyjyw@mail.dlut.edu.cn  
+
+
+| [微信公众号：老仓库的角落](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkxMDEzNDgwMg==&scene=124#wechat_redirect) | ![QRcode](wechat.jpg ':size=30%') |
+|:------:||

@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
-* **首页**
+* [**首页**](/)
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
@@ -23,7 +23,10 @@
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于他](personal_Notes/about_him/)
 
-* [**友情链接**](websites_Of_Friends/)
 
 <!-- * [GPA计算器](GPA_calculator/) -->
-* [**GPA计算器**](GPA_calculator2/)
+* [**GPA计算器(电脑版)**](GPA_calculator2/)
+
+* [**友情链接**](websites_Of_Friends/)
+
+* [**个人链接**](websites_Of_Me/)
