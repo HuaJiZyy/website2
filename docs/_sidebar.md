@@ -12,6 +12,7 @@
         * [附加资料(beta)](study_Notes/about_English/three_branches_of_governments/)
     * [关于计算机科学](study_Notes/about_computer_science/)
 
+
 * **旁门左道**
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
     * [ChatGPT用法](eat_drink_play_laugh/chatGPT_usage/)
@@ -23,7 +24,7 @@
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于他](personal_Notes/about_him/)
 
-
+* [自用资源](personal_resources/)
 <!-- * [GPA计算器](GPA_calculator/) -->
 * [**GPA计算器(电脑版)**](GPA_calculator2/)
 
