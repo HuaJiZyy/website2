@@ -6,20 +6,20 @@
 * [**GPA计算器(电脑版)**](GPA_calculator2/)
 
 * **学习随记**
-    * 转载
+    * **转载**
         * [提问的智慧](study_Notes/forwards/ask/)
-    * [关于英语](study_Notes/about_English/)
+    * **关于英语**
         * [约翰·肯尼迪的演讲](study_Notes/about_English/JFK_speech/)
-        * [雅思小作文](study_Notes/about_English/IELTS_writing1/)
-        * [雅思大作文](study_Notes/about_English/IELTS_writing2/)
         * [附加资料(beta)](study_Notes/about_English/three_branches_of_governments/)
-    * [关于计算机科学](study_Notes/about_computer_science/)
+    * **关于计算机科学**
+        * [学习资源](study_Notes/about_computer_science/)
         <!-- * [CS考研资料](study_Notes/about_computer_science/master_resources/) -->
 
 * **旁门左道**
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
     * [ChatGPT用法](eat_drink_play_laugh/chatGPT_usage/)
     * [辣炒花蚬子做法](eat_drink_play_laugh/spicy_clam/)
+    * [Aqara空调伴侣P3配置方法](eat_drink_play_laugh/aqara_P3/)
 
 * **个人随笔**
     * [关于谨言慎行](personal_Notes/close_zyys_mouth/)
@@ -27,7 +27,9 @@
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于他](personal_Notes/about_him/)
 
-* [自用资源](personal_resources/)
+* **自用资源**
+    * [雅思小作文](personal_resources/IELTS_writing1/)
+    * [雅思大作文](personal_resources/IELTS_writing2/)
 <!-- * [GPA计算器](GPA_calculator/) -->
 
 * [**友情链接**](websites_Of_Friends/)

@@ -1,6 +1,6 @@
-# 计算机科学
+## 学习资源 <!-- {docsify-ignore} -->
 一些自认为不错的资源：
-<!-- 您来到了没有知识的荒原呢～(笑 -->
+
 
 - 论文
 > [Eliciting Thinking Hierarchy without a Prior](https://openreview.net/forum?id=02YXg0OZdG)
