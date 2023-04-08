@@ -19,7 +19,7 @@
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
     * [ChatGPT用法](eat_drink_play_laugh/chatGPT_usage/)
     * [辣炒花蚬子做法](eat_drink_play_laugh/spicy_clam/)
-    * [Aqara空调伴侣P3配置方法](eat_drink_play_laugh/aqara_P3/)
+    * [Aqara空调伴侣P3配置方法](eat_drink_play_laugh/aqara_p3/)
 
 * **个人随笔**
     * [关于谨言慎行](personal_Notes/close_zyys_mouth/)
