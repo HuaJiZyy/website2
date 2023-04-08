@@ -1,8 +1,8 @@
-## 约翰·肯尼迪在古巴导弹危机中的电视演讲
+## 约翰·肯尼迪在古巴导弹危机中的电视演讲 <!-- {docsify-ignore} -->
 > 本文完成于: 2022.12  
 部分内容由我根据音频听写，如有错误，请联系zyyjyw@gmail.com进行修改。
 
-## ADDRESS DURING THE CUBAN MISSILE CRISIS
+## ADDRESS DURING THE CUBAN MISSILE CRISIS <!-- {docsify-ignore} -->
 
 Good evening my fellow citizens: 
 

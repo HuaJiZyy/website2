@@ -10,6 +10,9 @@
 
 [魔方小站](http://www.rubik.com.cn/)
 
+[(娱乐)学校让人沾染上的100+恶习](https://zhuanlan.zhihu.com/p/559705516)
+
+[学习的乐趣](https://zhuanlan.zhihu.com/p/602150910)
 
 
 <!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)

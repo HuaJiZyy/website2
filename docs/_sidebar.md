@@ -3,15 +3,18 @@
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
+* [**GPA计算器(电脑版)**](GPA_calculator2/)
 
 * **学习随记**
+    * 转载
+        * [提问的智慧](study_Notes/forwards/ask/)
     * [关于英语](study_Notes/about_English/)
         * [约翰·肯尼迪的演讲](study_Notes/about_English/JFK_speech/)
         * [雅思小作文](study_Notes/about_English/IELTS_writing1/)
         * [雅思大作文](study_Notes/about_English/IELTS_writing2/)
         * [附加资料(beta)](study_Notes/about_English/three_branches_of_governments/)
     * [关于计算机科学](study_Notes/about_computer_science/)
-
+        <!-- * [CS考研资料](study_Notes/about_computer_science/master_resources/) -->
 
 * **旁门左道**
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
@@ -26,7 +29,6 @@
 
 * [自用资源](personal_resources/)
 <!-- * [GPA计算器](GPA_calculator/) -->
-* [**GPA计算器(电脑版)**](GPA_calculator2/)
 
 * [**友情链接**](websites_Of_Friends/)
 
