@@ -12,7 +12,9 @@
 
 * [知乎](https://www.zhihu.com/people/zyy-50-79)
 
+* [淘宝店](https://shop210292260.taobao.com/)
 
+* [小红书](https://www.xiaohongshu.com/user/profile/5fe8160f00000000010006e1?xhsshare=CopyLink&appuid=5fe8160f00000000010006e1&apptime=1681197575)
 
 
 

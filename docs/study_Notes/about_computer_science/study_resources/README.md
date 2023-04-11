@@ -15,9 +15,3 @@
   > [Stanford University CS193p (Developing Applications for iOS using SwiftUI)](https://cs193p.sites.stanford.edu/)
 
   用最短的时间了解swiftUI和iOS应用程序的开发过程。如果原版英文教学有理解困难，bilibili上有此课程的中文机翻字幕。
-
-- 国内CS考研真题集
-
-  > [计算机与软件考研](https://github.com/csseky/cskaoyan)
-
-  包含绝大多数国内双一流高校的考研资料。
