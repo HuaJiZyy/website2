@@ -1,1 +1,1 @@
-[GPA calculator](test2_copy.html ':include :type=iframe width=120% height=10000px')
+[GPA calculator](test2.html ':include :type=iframe width=120% height=10000px')
