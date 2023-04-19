@@ -10,8 +10,10 @@
         * [提问的智慧](study_Notes/forwards/ask/)
     * **关于英语**
         * [约翰·肯尼迪的演讲](study_Notes/about_English/JFK_speech/)
+        * [The Road Not Taken](study_Notes/about_English/Road_not_taken/)
         * [附加资料(Beta)](study_Notes/about_English/three_branches_of_governments/)
     * **关于计算机科学**
+        * [密码学](study_Notes/about_computer_science/cipher/)
         * [学习资源](study_Notes/about_computer_science/study_resources/)
         * [考研资源](study_Notes/about_computer_science/exam_resources/)
         * [树莓派配置(Beta)](study_Notes/about_computer_science/raspberry_pie/)
@@ -32,6 +34,8 @@
 - **自用资源**
     * [雅思小作文](personal_resources/IELTS_writing1/)
     * [雅思大作文](personal_resources/IELTS_writing2/)
+    * [Cpp笔记](personal_resources/Cpp_notes/)
+
 <!-- * [GPA计算器](GPA_calculator/) -->
 
 * [友情链接](websites_Of_Friends/)

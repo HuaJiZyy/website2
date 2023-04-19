@@ -14,6 +14,8 @@
 
 [学习的乐趣](https://zhuanlan.zhihu.com/p/602150910)
 
+[退学.com](https://退学.com)
+
 
 <!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
 
