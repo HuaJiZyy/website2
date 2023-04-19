@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转盘抽奖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>转盘抽奖</h1>
+        <form id="option-form">
+            <label for="option">输入选项：</label>
+            <input type="text" id="option" required>
+            <button type="submit">添加选项</button>
+        </form>
+        <ul id="options-list"></ul>
+        <div id="wheel-container">
+            <canvas id="wheel" width="300" height="300"></canvas>
+        </div>
+        <button id="draw-button" disabled>开始抽取</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

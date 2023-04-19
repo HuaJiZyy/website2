@@ -3,7 +3,7 @@
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
-* [GPA计算器(电脑版)](GPA_calculator2/)
+
 
 - **学习随记**
     * **转载**
@@ -30,6 +30,9 @@
     * [关于成绩单](personal_Notes/grade_report/)
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于长者](personal_Notes/about_him/)
+- **工具**
+    * [GPA计算器(电脑版)](Tools/GPA_calculator2/)
+    * [晚上吃什么(Beta)](Tools/dinner/)
 
 - **自用资源**
     * [雅思小作文](personal_resources/IELTS_writing1/)
