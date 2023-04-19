@@ -90,8 +90,8 @@ a ^ b % p = ((a % p) ^ b) % p
 对于任意的两个整数 a 和 b (a > b)，有**gcd(a, b) = gcd(b, a % b)。**  
 其中, gcd(a,b)表示正整数a和b的最大公约数. a % b 表示a对b取模运算的结果.
 
-Python 语言实现：
-```
+<!-- Python 语言实现：
+
 def gcd(a, b):
     while b:
         a, b = b, a % b
@@ -100,9 +100,19 @@ def gcd(a, b):
 a = 99
 b = 78
 result = gcd(a, b)
-print("gcd({0}, {1}) = {2}".format(a, b, result))
-```
+print("gcd({0}, {1}) = {2}".format(a, b, result)) -->
 
+C++ 代码实现:
+```
+int gcd(int a, int b) {
+    // 当 b 为 0 时， a 就是最大公约数
+    if (b == 0) {
+        return a;
+    }
+    // 递归调用 gcd 函数，用 b 和 a % b 作为参数
+    return gcd(b, a % b);
+}
+```
 <!-- <iframe src="//player.bilibili.com/player.html?aid=717731278&bvid=BV1KQ4y127AT&cid=399440988&page=1" height="500" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
 > 欧几里得算法的几何表示和证明过程都很简单, 故略去. 详细可参考: https://www.bilibili.com/video/BV19r4y127fu
 
