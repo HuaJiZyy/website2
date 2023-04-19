@@ -31,8 +31,8 @@
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于长者](personal_Notes/about_him/)
 - **工具**
-    * [GPA计算器(电脑版)](Tools/GPA_calculator2/)
     * [晚上吃什么](Tools/Dinner/)
+    * [GPA计算器(电脑版)](Tools/GPA_calculator2/)
 
 - **自用资源**
     * [雅思小作文](personal_resources/IELTS_writing1/)

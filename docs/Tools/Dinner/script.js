@@ -54,7 +54,7 @@ function spinRectangles() {
             const winningRectangle = rectangleContainer.children[currentIndex];
             winningRectangle.classList.add('highlight');
             setTimeout(() => {
-                alert(`今晚吃：${winningRectangle.textContent}`);
+                alert(`今晚吃：${winningRectangle.textContent} !`);
                 isSpinning = false; // 设置为抽奖结束
             }, 100);
         }
@@ -74,7 +74,7 @@ optionForm.addEventListener('submit', (e) => {
 
     // 检查选项数量是否达到上限
     if (options.length >= 9) {
-        alert('最多只能添加9个选项。');
+        alert('你想吃的东西太多了!');
         return;
     }
 
