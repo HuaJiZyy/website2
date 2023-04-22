@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AA 分账器</title>
+	<title>团建AA分账器</title>
 	<!-- 定义表格样式 -->
 	<style>
 		table {
@@ -39,10 +39,18 @@
 </head>
 
 <body>
-	<h1>AA 分账器</h1>
+	<h1>团建AA分账器</h1>
 	<table id="aa-table">
 		<tr>
-			<th>项目/人</th>
+			<th>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<th style="border: none;">项目名称</th>
+						<th style="border: none;">总开销</th>
+						<th style="border: none;">结账人</th>
+					</tr>
+				</table>
+			</th>
 		</tr>
 	</table>
 	<!-- 添加/删除 行和列的按钮 -->
@@ -50,7 +58,8 @@
 	<button onclick="addRow()">添加行</button>
 	<button onclick="removeColumn()">减少列</button>
 	<button onclick="removeRow()">减少行</button>
-	<button onclick="addTotalRow()">计算!</button>
+	<button onclick="calculateTotalAmounts()">计算!</button>
+
 	<script>
 		// 初始化行数 m 和列数 n 的变量
 		let row_num = 0; // 行数
@@ -69,6 +78,7 @@
 			input.value = "人 " + colum_num;
 			input.oninput = function () {
 				updatePersonName(colum_num, input.value);
+				updateLeaderSelectOptions();
 			};
 			newHeader.appendChild(input);
 
@@ -96,11 +106,21 @@
 			updateAmounts();
 		}
 
+		// 更新参与者名称
+		function updatePersonName(index, newName) {
+			const table = document.getElementById("aa-table");
+			for (let i = 1; i <= row_num; i++) {
+				const row = table.rows[i];
+				const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
+				leaderSelect.options[index].text = newName;
+			}
+		}
+
 		// 添加行的函数
 		function addRow() {
 			row_num++;
 			const table = document.getElementById("aa-table");
-			const newRow = table.insertRow(-1);
+			const newRow = table.insertRow(row_num); // 将新行插入到总计行前面
 			const headerCell = newRow.insertCell(0);
 
 			// 创建输入框以设置项目名称
@@ -114,7 +134,7 @@
 			totalCostInput.type = "number";
 			totalCostInput.min = "0";
 			totalCostInput.step = "0.01";
-			totalCostInput.placeholder = "项目总花费";
+			totalCostInput.placeholder = "快速均分开销";
 			totalCostInput.oninput = updateAmounts;
 			headerCell.appendChild(totalCostInput);
 
@@ -122,6 +142,7 @@
 			const leaderSelect = document.createElement("select");
 			leaderSelect.onchange = updateAmounts;
 			headerCell.appendChild(leaderSelect);
+			
 
 			// 为新行添加单元格
 			for (let i = 1; i <= colum_num; i++) {
@@ -143,6 +164,7 @@
 			updateLeaderSelectOptions();
 			updateAmounts();
 		}
+
 
 		// 减少列的函数
 		function removeColumn() {
@@ -188,39 +210,49 @@
 				// 计算每人花费
 				const perPersonCost = participants > 0 ? totalCost / participants : 0;
 
-				// 更新每个参与者的金额
-				for (let j = 1; j <= colum_num; j++) {
-					const cell = row.cells[j];
-					const checkBox = cell.getElementsByTagName("input")[1];
-					const amountInput = cell.getElementsByTagName("input")[0];
-					if (checkBox.checked) {
-						amountInput.value = perPersonCost.toFixed(2);
-						totalAmounts[j - 1] += parseFloat(perPersonCost.toFixed(2));
-					} else {
-						amountInput.value = '';
+				// 如果选择了结账人，扣除该项目的总开销
+				const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
+				const leaderIndex = leaderSelect.value - 1;
+				if (leaderIndex >= 0) { // 添加这个条件判断，只有在选择了负责人的情况下才进行计算
+					// 更新每个参与者的金额
+					for (let j = 1; j <= colum_num; j++) {
+						const cell = row.cells[j];
+						const checkBox = cell.getElementsByTagName("input")[1];
+						const amountInput = cell.getElementsByTagName("input")[0];
+						if (checkBox.checked) {
+							amountInput.value = perPersonCost.toFixed(2);
+							totalAmounts[j - 1] += parseFloat(perPersonCost.toFixed(2));
+						} else {
+							amountInput.value = '';
+						}
 					}
+					totalAmounts[leaderIndex] -= totalCost;
 				}
 			}
 
-		}
-
-		// 更新人员名称的函数
-		function updatePersonName(index, newName) {
-			for (let i = 1; i <= row_num; i++) {
-				const row = document.getElementById("aa-table").rows[i];
-				const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
-				leaderSelect.options[index - 1].text = newName;
+			// 在这里更新总计行中的数据
+			const totalRow = table.rows[row_num + 1];
+			if (totalRow) {
+				for (let i = 0; i < colum_num; i++) {
+					totalRow.cells[i + 1].innerText = totalAmounts[i].toFixed(2); // i+1是因为表头不改. 这里gpt出了bug
+				}
 			}
 		}
+
 
 		// 更新负责人下拉框选项的函数
 		function updateLeaderSelectOptions() {
 			for (let i = 1; i <= row_num; i++) {
 				const row = document.getElementById("aa-table").rows[i];
 				const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
+				const previousSelectedValue = leaderSelect.value; // 保存当前选中的值
 				while (leaderSelect.options.length > 0) {
 					leaderSelect.options.remove(0);
 				}
+				const unselectedOption = document.createElement("option");
+				unselectedOption.text = "未选择";
+				unselectedOption.value = "0";
+				leaderSelect.options.add(unselectedOption); // 添加“未选择”选项
 				for (let j = 1; j <= colum_num; j++) {
 					const option = document.createElement("option");
 					const name = document.getElementById("aa-table").rows[0].cells[j].getElementsByTagName("input")[0].value;
@@ -228,22 +260,95 @@
 					option.value = j;
 					leaderSelect.options.add(option);
 				}
+				leaderSelect.value = previousSelectedValue; // 将先前选中的值设置回来
 			}
 		}
+
+
 
 		// 添加总计行
 		function addTotalRow() {
 			const table = document.getElementById("aa-table");
 			const newRow = table.insertRow(-1);
+			newRow.id = "total-row";
 			const firstCell = newRow.insertCell(0);
-			firstCell.innerText = "总计"; 
+			firstCell.innerText = "总计";
 			for (let i = 0; i < colum_num; i++) {
 				newRow.insertCell(-1).innerText = "0";
 			}
 		}
-		function calculateSum() {
-			return;
+
+		// 计算不平均分配的项目的总开销
+		function calculateTotalCostForProject(projectIndex) {
+			if (projectIndex < 1 || projectIndex > row_num) {
+				console.error("Invalid project index");
+				return 0;
+			}
+
+			const table = document.getElementById("aa-table");
+			const projectRow = table.rows[projectIndex];
+			let totalCost = 0;
+
+			for (let i = 1; i <= colum_num; i++) {
+				const cell = projectRow.cells[i];
+				const checkBox = cell.getElementsByTagName("input")[1];
+				const amountInput = cell.getElementsByTagName("input")[0];
+
+				if (checkBox.checked) {
+					totalCost += parseFloat(amountInput.value) || 0;
+				}
+			}
+
+			return totalCost;
 		}
+
+		// 计算总金额
+		function calculateTotalAmounts() {
+			const table = document.getElementById("aa-table");
+			let totalAmounts = Array(colum_num).fill(0);
+
+			for (let i = 1; i <= row_num; i++) {
+				const row = table.rows[i];
+				const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
+				const leaderIndex = parseInt(leaderSelect.value);
+				const totalCostInput = row.cells[0].getElementsByTagName("input")[1];
+				const totalCost = parseFloat(totalCostInput.value) || 0;
+
+				const totalCost2 = parseFloat(calculateTotalCostForProject(i));
+
+				if (leaderIndex !== 0) {
+					for (let j = 1; j <= colum_num; j++) {
+						const cell = row.cells[j];
+						const checkBox = cell.getElementsByTagName("input")[1];
+						const amountInput = cell.getElementsByTagName("input")[0];
+						if (checkBox.checked) {
+							totalAmounts[j - 1] += parseFloat(amountInput.value);
+						}
+						if (leaderIndex === j) {
+							totalAmounts[j - 1] -= totalCost2;
+						}
+					}
+				}
+			}
+
+			// 在这里添加总计行
+			let totalRow = table.rows[row_num + 1];
+			if (!totalRow) {
+				totalRow = table.insertRow(-1);
+				totalRow.id = "total-row";
+				const firstCell = totalRow.insertCell(0);
+				firstCell.innerText = "总计";
+				for (let i = 0; i < colum_num; i++) {
+					totalRow.insertCell(-1).innerText = "0";
+				}
+			}
+
+			// 更新总计行数据
+			for (let i = 0; i < colum_num; i++) {
+				totalRow.cells[i + 1].innerText = totalAmounts[i].toFixed(2);
+			}
+		}
+
 
 		// 初始化函数，创建初始表格结构
 		function init() {
