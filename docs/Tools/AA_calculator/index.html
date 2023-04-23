@@ -104,7 +104,14 @@
 			// 更新领导选项并重新计算金额
 			updateLeaderSelectOptions();
 			updateAmounts();
+
+			// 更新总计行
+			const totalRow = table.rows[row_num + 1];
+			if (totalRow) {
+				totalRow.insertCell(-1).innerText = "0";
+			}
 		}
+
 
 		// 更新参与者名称
 		function updatePersonName(index, newName) {
@@ -142,7 +149,7 @@
 			const leaderSelect = document.createElement("select");
 			leaderSelect.onchange = updateAmounts;
 			headerCell.appendChild(leaderSelect);
-			
+
 
 			// 为新行添加单元格
 			for (let i = 1; i <= colum_num; i++) {
@@ -177,6 +184,11 @@
 			// 更新领导选项并重新计算金额
 			updateLeaderSelectOptions();
 			updateAmounts();
+			// 更新总计行
+			const totalRow = table.rows[row_num + 1];
+			if (totalRow) {
+				totalRow.deleteCell(-1);
+			}
 		}
 
 		// 减少行的函数
@@ -347,6 +359,7 @@
 			for (let i = 0; i < colum_num; i++) {
 				totalRow.cells[i + 1].innerText = totalAmounts[i].toFixed(2);
 			}
+
 		}
 
 

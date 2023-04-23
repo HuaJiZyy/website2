@@ -33,7 +33,7 @@
 - **工具**
     * [晚上吃什么](Tools/Dinner/)
     * [GPA计算器(电脑版)](Tools/GPA_calculator2/)
-    * [AA分账器(Beta)](Tools/AA_calculator/)
+    * [团建分账器(Beta)](Tools/AA_calculator/)
 
 - **自用资源**
     * [雅思小作文](personal_resources/IELTS_writing1/)
