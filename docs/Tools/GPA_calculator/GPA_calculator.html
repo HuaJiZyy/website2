@@ -45,7 +45,7 @@
             <button onclick="openFileDialog()" class="btn btn-success mr-2">上传文件</button>
             <div class="exampleFile">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="viewport">
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-boundary="viewport">
                     查看文件示例
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -56,7 +56,7 @@
             <span>可上传一个txt或Excel文件, 每行格式为: 课程名 学分 分数</span>
         </div>
 
-        <div class="result-container"> <!-- 新添加的div -->
+        <!-- <div class="result-container">
             <h2 id="result"></h2>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -68,7 +68,24 @@
                     <a class="dropdown-item" href="#" onclick="exportToXLSX()">导出成绩为Excel文件</a>
                 </div>
             </div>
+        </div> -->
+
+
+
+        <div class="result-container"> <!-- 新添加的div -->
+            <h2 id="result"></h2>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-boundary="viewport">
+                    导出成绩单
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" onclick="exportGrades()">导出成绩为txt文件</a>
+                    <a class="dropdown-item" href="#" onclick="exportToXLSX()">导出成绩为Excel文件</a>
+                </div>
+            </div>
         </div>
+
 
         <table id="courseTable" class="table mt-3">
             <thead>
