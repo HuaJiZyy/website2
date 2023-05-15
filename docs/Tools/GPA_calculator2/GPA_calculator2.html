@@ -7,13 +7,12 @@
     <title>GPA计算器</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- Popper.js (necessary for Bootstrap's dropdowns and tooltips) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-
 
     <!-- Bootstrap JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -35,10 +34,6 @@
     <div class="container">
         <h1>GPA计算器</h1>
         <input type="file" id="fileInput" accept=".txt, .xlsx, .xls" onchange="handleFileUpload(event)">
-        <!-- <div>
-            <button onclick="openFileDialog()" class="btn btn-success">上传文件</button>
-            <p>上传一个txt或Excel文件, 每行格式为: 课程名 学分 分数</p>
-        </div> -->
 
         <div class="d-flex align-items-center">
             <button onclick="openFileDialog()" class="btn btn-success mr-2">上传文件</button>
@@ -87,8 +82,6 @@
             </tbody>
         </table>
 
-
-
     </div>
 
 
@@ -135,10 +128,6 @@
         }
         //清空页面
         function clearAllInputs() {
-            // const inputs = document.querySelectorAll('input[type="text"]');
-            // inputs.forEach(input => {
-            //     input.value = '';
-            // });
             const courseTableBody = document.getElementById('courseTableBody');
             courseTableBody.innerHTML = '';
         }
@@ -260,10 +249,8 @@
                 const numCredits = Number(credits);
                 if ((score == '') || (credits == '')) {
                     console.log(`行 ${rowIndex + 1}: 分数或学分输入无效`);
-                    // alert('请填写所有字段并确保输入的是数字');
                     continue;
                 }
-                // console.log(`行 ${numScore}: 分数或学分输入无效`);
                 GPA = getGPA(numScore);
                 totalCredits += numCredits;
                 totalWeightedGPA += numCredits * GPA;

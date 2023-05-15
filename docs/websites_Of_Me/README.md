@@ -4,7 +4,7 @@
 
 * [豆瓣](https://www.douban.com/people/193538245/?_i=0604220lY7wWU_)
 
-* [Facebook](https://www.facebook.com/HuaJiZyy/)
+<!-- * [Facebook](https://www.facebook.com/HuaJiZyy/) -->
 
 * [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
 
