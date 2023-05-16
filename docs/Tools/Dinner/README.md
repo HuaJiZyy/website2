@@ -1,1 +1,1 @@
-[GPA calculator](Dinner.html ':include :type=iframe width=120% height=600px')
+[Dinner](Dinner.html ':include :type=iframe width=120% height=600px')
