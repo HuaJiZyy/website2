@@ -28,7 +28,7 @@ input {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #198754;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -37,8 +37,9 @@ button {
     cursor: pointer;
     margin-top: 1rem;
 }
+
 button2 {
-    background-color: #D53E41;
+    background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;

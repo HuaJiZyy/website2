@@ -20,11 +20,11 @@
 		}
 
 		th {
-			background-color: #f2f2f2;
+			background-color: #b0f4e9;
 		}
 
-		button {
-			background-color: #4CAF50;
+		calcu_button {
+			background-color: #dc3545;
 			border: none;
 			color: white;
 			padding: 10px 20px;
@@ -34,6 +34,21 @@
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
+			border-radius: 5px;
+		}
+
+		button {
+			background-color: #198754;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
 		}
 	</style>
 </head>
@@ -58,7 +73,7 @@
 	<button onclick="addRow()">添加行</button>
 	<button onclick="removeColumn()">减少列</button>
 	<button onclick="removeRow()">减少行</button>
-	<button onclick="calculateTotalAmounts()">计算!</button>
+	<calcu_button onclick="calculateTotalAmounts()">计算!</button>
 
 	<script>
 		// 初始化行数 m 和列数 n 的变量
@@ -138,9 +153,9 @@
 
 			// 创建输入框以设置项目总花费
 			const totalCostInput = document.createElement("input");
-			totalCostInput.type = "number";
-			totalCostInput.min = "0";
-			totalCostInput.step = "0.01";
+			// totalCostInput.type = "number";
+			// totalCostInput.min = "0";
+			// totalCostInput.step = "0.01";
 			totalCostInput.placeholder = "快速均分开销";
 			totalCostInput.oninput = updateAmounts;
 			headerCell.appendChild(totalCostInput);

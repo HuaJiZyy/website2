@@ -16,14 +16,11 @@ function createRectangles() {
     }
 }
 
-// ... 其他代码 ...
 clearOptionsButton.addEventListener('click', () => {
     options.length = 0;
     createRectangles();
     drawButton.disabled = true;
 });
-
-// ... 其他代码 ...
 
 let isSpinning = false; // 添加此变量
 
@@ -62,12 +59,6 @@ function spinRectangles() {
 
     spin();
 }
-
-// ... 其他代码 ...
-
-
-// ... 其他代码 ...
-
 
 optionForm.addEventListener('submit', (e) => {
     e.preventDefault();
