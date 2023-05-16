@@ -1,4 +1,4 @@
-## 考研资源 <!-- {docsify-ignore} -->
+## 考试资源 <!-- {docsify-ignore} -->
 
 - 国内CS考研真题集
 
@@ -9,3 +9,7 @@
 - 大连理工大学考研资料
 
   > [蓝奏云下载](https://wwxv.lanzoul.com/iXqIq0sen8uj)
+
+- 软件工程期末突击知识点(适用于大连理工大学王凡老师)
+
+  > https://www.bilibili.com/read/cv16732542

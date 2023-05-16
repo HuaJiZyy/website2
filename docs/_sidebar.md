@@ -15,7 +15,7 @@
     * **关于计算机科学**
         * [密码学](study_Notes/about_computer_science/cipher/)
         * [学习资源](study_Notes/about_computer_science/study_resources/)
-        * [考研资源](study_Notes/about_computer_science/exam_resources/)
+        * [考试资源](study_Notes/about_computer_science/exam_resources/)
         * [树莓派配置(Beta)](study_Notes/about_computer_science/raspberry_pie/)
         <!-- * [CS考研资料](study_Notes/about_computer_science/master_resources/) -->
 
