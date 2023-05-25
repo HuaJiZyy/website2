@@ -15,17 +15,50 @@ function createRectangles() {
         rectangleContainer.appendChild(rectangle);
     }
 }
+// function createRectangles() {
+//     rectangleContainer.innerHTML = '';
+//     for (let i = 0; i < options.length; i++) {
+//         const rectangle = document.createElement('div');
+//         rectangle.className = 'rectangle';
+
+//         // 创建一个新的输入框并设置其值为选项
+//         const input = document.createElement('input');
+//         input.type = 'text';
+//         input.value = options[i];
+//         input.addEventListener('input', () => {
+//             // 当用户在输入框中键入时，更新选项数组
+//             options[i] = input.value;
+//         });
+
+//         rectangle.appendChild(input);  // 将输入框添加到矩形中
+//         rectangleContainer.appendChild(rectangle);
+//     }
+// }
+
 
 clearOptionsButton.addEventListener('click', () => {
     options.length = 0;
     createRectangles();
     drawButton.disabled = true;
+    cannot_start_flag = false;
 });
 
 let isSpinning = false; // 添加此变量
+let cannot_start_flag = false;
 
+//抽奖
 function spinRectangles() {
+    if (options.length == 1) {
+        alert(`至少添加两个选项哦!`)
+        return;
+    }
+
+
     if (isSpinning) { // 检查是否正在进行抽奖
+        return;
+    }
+    if (cannot_start_flag) {
+        alert(`你已经选完了, 不许换!`);
         return;
     }
 
@@ -51,21 +84,24 @@ function spinRectangles() {
             const winningRectangle = rectangleContainer.children[currentIndex];
             winningRectangle.classList.add('highlight');
             setTimeout(() => {
-                alert(`今晚吃：${winningRectangle.textContent} !`);
+                alert(`今晚吃: ${winningRectangle.textContent} !`);
                 isSpinning = false; // 设置为抽奖结束
-            }, 100);
+            }, 300);
         }
     };
 
     spin();
+    cannot_start_flag = true;
 }
 
+// 添加选项
 optionForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // 检查选项数量是否达到上限
     if (options.length >= 9) {
         alert('你想吃的东西太多了!');
+        optionInput.value = '';  // 添加这行代码来清空输入框
         return;
     }
 
@@ -75,8 +111,8 @@ optionForm.addEventListener('submit', (e) => {
         optionInput.value = '';
         drawButton.disabled = false;
     }
-
     createRectangles();
+    cannot_start_flag = false;
 });
 
 drawButton.addEventListener('click', () => {

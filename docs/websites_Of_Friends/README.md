@@ -25,3 +25,7 @@
 
 [Zhihu](https://www.zhihu.com/people/zyy-50-79) -->
 
+[996.ICU](https://996.icu)
+
+[备用地址](https://zyyjyw.gitee.io)
+

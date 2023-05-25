@@ -2,7 +2,7 @@
 
 * [bilibili](https://space.bilibili.com/363122611)
 
-* [豆瓣](https://www.douban.com/people/193538245/?_i=0604220lY7wWU_)
+<!-- * [豆瓣](https://www.douban.com/people/193538245/?_i=0604220lY7wWU_) -->
 
 <!-- * [Facebook](https://www.facebook.com/HuaJiZyy/) -->
 
