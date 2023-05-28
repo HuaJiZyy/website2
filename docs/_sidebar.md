@@ -29,6 +29,7 @@
     * [关于成绩单](personal_Notes/grade_report/)
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于长者](personal_Notes/about_him/)
+    * [关于游戏](personal_Notes/about_game/)
 - **工具**
     * [晚上吃什么](Tools/Dinner/)
     * [团建AA分账器](Tools/AA_calculator/)
