@@ -17,14 +17,13 @@
         * [学习资源](study_Notes/about_computer_science/study_resources/)
         * [考试资源](study_Notes/about_computer_science/exam_resources/)
         * [树莓派配置(Beta)](study_Notes/about_computer_science/raspberry_pie/)
-        <!-- * [CS考研资料](study_Notes/about_computer_science/master_resources/) -->
 
 - **旁门左道**
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
     * [ChatGPT用法](eat_drink_play_laugh/chatGPT_usage/)
     * [辣炒花蚬子做法](eat_drink_play_laugh/spicy_clam/)
     * [Aqara空调伴侣P3配置方法](eat_drink_play_laugh/aqara_p3/)
-
+    * [Mac上ClashX快捷键配置方法](eat_drink_play_laugh/AppleScript/)
 - **个人随笔**
     * [关于谨言慎行](personal_Notes/close_zyys_mouth/)
     * [关于成绩单](personal_Notes/grade_report/)
