@@ -16,16 +16,7 @@
 
 [退学.com](https://退学.com)
 
-
-<!-- [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
-
-[Twitter](https://twitter.com/HuaJiZyy)
-
-[bilibili](https://space.bilibili.com/363122611)
-
-[Zhihu](https://www.zhihu.com/people/zyy-50-79) -->
-
 [996.ICU](https://996.icu)
 
-[备用地址](https://zyyjyw.gitee.io)
+[此网站的备用地址](https://zyyjyw.gitee.io)
 

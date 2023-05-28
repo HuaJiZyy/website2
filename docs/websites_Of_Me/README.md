@@ -18,16 +18,6 @@
 
 
 
-<!-- * [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkxMDEzNDgwMg==&scene=124#wechat_redirect)
-![img](wechat.jpg ':size=7%') -->
-
-<!-- <p style="display: flex; align-items: center;">
-  <img src="wechat.jpg" alt="your-image-description" style="margin-right: 10px;">
-  这里是你的文字
-</p> -->
-
-
-
 * 邮箱：  
     * zyyjyw@gmail.com  
     * zyyjyw@qq.com  

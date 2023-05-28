@@ -6,13 +6,13 @@
 
 
 - **学习随记**
-    * **转载**
+    * **- 转载**
         * [提问的智慧](study_Notes/forwards/ask/)
-    * **关于英语**
+    * **- 关于英语**
         * [约翰·肯尼迪的演讲](study_Notes/about_English/JFK_speech/)
         * [The Road Not Taken](study_Notes/about_English/Road_not_taken/)
         * [附加资料(Beta)](study_Notes/about_English/three_branches_of_governments/)
-    * **关于计算机科学**
+    * **- 关于计算机科学**
         * [密码学](study_Notes/about_computer_science/cipher/)
         * [学习资源](study_Notes/about_computer_science/study_resources/)
         * [考试资源](study_Notes/about_computer_science/exam_resources/)
@@ -33,7 +33,7 @@
 - **工具**
     * [晚上吃什么](Tools/Dinner/)
     * [团建AA分账器](Tools/AA_calculator/)
-    * [GPA计算器(电脑版)](Tools/GPA_calculator/)
+    * [GPA计算器](Tools/GPA_calculator/)
 
 
 - **自用资源**
