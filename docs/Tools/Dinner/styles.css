@@ -49,6 +49,19 @@ button2 {
     margin-top: 1rem;
 }
 
+.my-button {
+    /* 你的样式 */
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
 button:hover {
     background-color: #0056b3;
 }
