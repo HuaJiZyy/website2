@@ -77,6 +77,12 @@ server {
 }
 ```
 
+重新启动Nginx:
+```
+sudo service nginx restart
+
+```
+
 ```bash
 scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs root@66.135.29.181:/var/www/zhangyiyang.xyz
 ```
