@@ -12,7 +12,7 @@ AppleScript是Apple公司的一种脚本语言，用于自动化Mac OS操作系�
 在AppleScript中，tell语句是一种非常重要的控制结构，它允许你向特定的应用程序或对象发送命令或请求信息。
 
 tell语句的基本结构如下：
-```
+```AppleScript
 tell application "ApplicationName"
     -- Your commands here
 end tell
@@ -20,7 +20,7 @@ end tell
 在这个结构中，ApplicationName是你想要交互的应用程序的名称。在tell和end tell之间的部分是你想要应用程序执行的命令。
 
 比如，你想要让Finder打开一个新窗口，你可以这样写：
-```
+```AppleScript
 tell application "Finder"
     make new Finder window
 end tell
@@ -51,7 +51,7 @@ end tell
 ## ClashX的AppleScript代码
 
 开启/关闭代理:
-```
+```AppleScript
 on run {input, parameters}
     (* Your script goes here *)
     tell application "ClashX Pro"
@@ -63,7 +63,7 @@ end run
 ```
 
 设置代理模式为Rule(规则):
-```
+```AppleScript
 on run {input, parameters}
 	(* Your script goes here *)
 	tell application "ClashX"
@@ -74,7 +74,7 @@ end run
 ```
 
 设置代理模式为Global(全局):
-```
+```AppleScript
 on run {input, parameters}
 	(* Your script goes here *)
 	tell application "ClashX"

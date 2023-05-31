@@ -103,7 +103,7 @@ result = gcd(a, b)
 print("gcd({0}, {1}) = {2}".format(a, b, result)) -->
 
 C++ 代码实现:
-```
+```C++
 int gcd(int a, int b) {
     // 当 b 为 0 时， a 就是最大公约数
     if (b == 0) {
@@ -152,7 +152,7 @@ y = x' - (a // b) * y'
 
 这样就得到了扩展欧几里得算法中x和y的更新规则。通过递归地应用这个规则，可以找到满足 ax + by = gcd(a, b) 的整数 x 和 y。
 ##### C++代码实现：
-```
+```C++
 // 已知正整数a和b, 求解满足等式ax+by=1中, x和y的一组最小整数解.
 long ExpGcd(long a, long b, long &x, long &y) {
     long q, temp;
