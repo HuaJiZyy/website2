@@ -1,5 +1,7 @@
 ## Mac上ClashX快捷键配置方法 <!-- {docsify-ignore} -->
 
+!> 2023.6.3 更新: Mac版ClashX Pro已支持全局快捷键, 无需额外配置!
+
 > 通过本方法, 可以实现在Mac上通过AppleScript实现了系统级快捷键开启/关闭ClashX代理, 以及全局/规则代理模式的切换.
 
 ## AppleScript简介

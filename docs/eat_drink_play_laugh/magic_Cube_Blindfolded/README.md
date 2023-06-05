@@ -39,11 +39,11 @@ R U' R' U' R U R D R' U' R D' R' U2 R' U'
 ## 附录1 缓冲位置图解
 
 棱块缓冲位置：B&M  
-![img](1.jpeg ':size=40%')
+![img](1.png ':size=40%')  
 <!-- <img src="1.jpeg" style="zoom:50%"> -->
 
 角块缓冲位置：A&E&R  
-![img](2.jpeg ':size=40%')
+![img](2.png ':size=40%')  
 <!-- <img src="./2.jpeg"  style="zoom: 33%;" /> -->
 
 

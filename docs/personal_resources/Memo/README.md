@@ -53,6 +53,10 @@ scp user@host:/path/to/file.txt /path/to/destination
 scp -r /path/to/directory user@host:/path/to/destination
 ```
 
+```bash
+rm -r /var/www/zhangyiyang.xyz/*
+scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/* root@66.135.29.181:/var/www/zhangyiyang.xyz
+```
 
 ## Nginx配置
 目录: `/etc/nginx/sites-available/zhangyiyang.xyz`
@@ -76,13 +80,14 @@ server {
     return 301 https://$host$request_uri;
 }
 ```
+检查Nginx服务状态:
+```
+sudo service nginx status
+
+```
 
 重新启动Nginx:
 ```
-sudo service nginx restart
+sudo systemctl restart nginx
 
-```
-
-```bash
-scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs root@66.135.29.181:/var/www/zhangyiyang.xyz
 ```
