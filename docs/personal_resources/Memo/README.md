@@ -63,7 +63,7 @@ scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/* root@66.135.2
 ```
 server {
     listen 443 ssl;
-    server_name zhangyiyang.xyz;
+    server_name zhangyiyang.xyz www.zhangyiyang.xyz;
 
     ssl_certificate /etc/nginx/ssl/zhangyiyang.xyz.pem;
     ssl_certificate_key /etc/nginx/ssl/zhangyiyang.xyz.key;
