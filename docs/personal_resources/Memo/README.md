@@ -19,8 +19,8 @@
 ```bash
 sudo killall -HUP mDNSResponder
 ```
-
-## scp命令
+## Linux常用命令
+### scp命令
 `scp` 是 Secure Copy（安全复制）的缩写，是基于 SSH (Secure Shell) 的一种网络协议，用于在本地主机和远程主机之间，或两个远程主机之间安全地传输文件。`scp` 命令是在 Linux 和 macOS 系统中常用的一个命令行工具，也可以在 Windows 上通过某些应用程序（如 Putty）使用。
 
 `scp` 命令的基本语法如下：
@@ -28,7 +28,6 @@ sudo killall -HUP mDNSResponder
 ```bash
 scp [options] source destination
 ```
-
 其中：
 
 - `options`：`scp` 命令的选项，例如 `-r`（递归复制目录）、`-p`（保留原文件的修改时间和访问时间）等。
@@ -56,6 +55,11 @@ scp -r /path/to/directory user@host:/path/to/destination
 ```bash
 rm -r /var/www/zhangyiyang.xyz/*
 scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/* root@66.135.29.181:/var/www/zhangyiyang.xyz
+```
+
+### 重启系统
+```
+sudo reboot
 ```
 
 ## Nginx配置

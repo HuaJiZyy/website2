@@ -138,9 +138,9 @@
         }
 
         //刷新页面
-        function refreshPage() {
-            location.reload();
-        }
+        // function refreshPage() {
+        //     location.reload();
+        // }
 
         //清空页面
         function clearAllInputs() {
@@ -273,7 +273,7 @@
                     console.log(`行 ${rowIndex + 1}: 分数或学分输入无效`);
                     continue;
                 }
-                GPA = getGPA(numScore);
+                GPA = getGPA(numScore, 0);
                 totalCredits += numCredits;
                 totalWeightedGPA += numCredits * GPA;
                 totalWeightedScore += numCredits * numScore;
@@ -339,16 +339,29 @@
         //获取按某算法后生成的绩点, 默认0为标准4.0算法
         function getGPA(numScore, method = 0) {
             var GPA;
-            if (numScore >= 90) {
-                GPA = 4.0;
-            } else if (numScore >= 80) {
-                GPA = 3.0;
-            } else if (numScore >= 70) {
-                GPA = 2.0;
-            } else if (numScore >= 60) {
-                GPA = 1.0;
-            } else {
-                GPA = 0;
+            if (method == 0) {
+                if (numScore >= 90) {
+                    GPA = 4.0;
+                } else if (numScore >= 80) {
+                    GPA = 3.0;
+                } else if (numScore >= 70) {
+                    GPA = 2.0;
+                } else if (numScore >= 60) {
+                    GPA = 1.0;
+                } else {
+                    GPA = 0;
+                }
+            }
+            else if (method == 1) {
+                if (numScore >= 85) {
+                    GPA = 4.0;
+                } else if (numScore >= 75) {
+                    GPA = 3.0;
+                } else if (numScore >= 60) {
+                    GPA = 2.0;
+                } else {
+                    GPA = 0;
+                }
             }
             return GPA;
         }

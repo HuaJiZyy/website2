@@ -72,9 +72,9 @@
 	<button onclick="addColumn()">添加参与人</button>
 	<button onclick="removeColumn()">减少参与人</button>
 	<button onclick="addRow()">添加项目</button>
-
 	<button onclick="removeRow()">减少项目</button>
 	<calcu_button onclick="calculateTotalAmounts()">计算!</button>
+
 	<!-- <button onclick="calculateTotalAmounts()">计算!</button> -->
 	<!-- <button onclick="removeTotalRow()">移除总计行</button> -->
 
@@ -84,8 +84,9 @@
 		let colum_num = 0; // 列数
 		let total_row_flag = 0; //是否已有总计行
 
-		// 添加列的函数
+		// 添加列的函数(添加参与人)
 		function addColumn() {
+			removeTotalRow();
 			colum_num++;
 			const table = document.getElementById("aa-table");
 			const headerRow = table.rows[0];
@@ -94,7 +95,7 @@
 			// 创建输入框以设置人员名称
 			const input = document.createElement("input");
 			input.type = "text";
-			input.value = "Person " + colum_num;
+			input.value = "参与人 " + colum_num;
 			input.oninput = function () {
 				updatePersonName(colum_num, input.value);
 				updatePayer();
@@ -120,12 +121,12 @@
 			updatePayer();
 			updateAmounts();
 
-			// 更新总计行
-			const totalRow = table.rows[row_num + 1];
-			if (totalRow) {
-				totalRow.insertCell(-1).innerText = "0";
-			}
-			monitorChanges();
+			// // 更新总计行
+			// const totalRow = table.rows[row_num + 1];
+			// if (totalRow) {
+			// 	totalRow.insertCell(-1).innerText = "0";
+			// }
+			// monitorChanges();
 		}
 
 		// 更新参与者名称
@@ -140,6 +141,7 @@
 
 		// 添加行的函数
 		function addRow() {
+			removeTotalRow();
 			row_num++;
 			const table = document.getElementById("aa-table");
 			const newRow = table.insertRow(row_num); // 将新行插入到总计行前面
@@ -202,16 +204,18 @@
 			// 更新领导选项并重新计算金额
 			updatePayer();
 			updateAmounts();
-			// 更新总计行
-			const totalRow = table.rows[row_num + 1];
-			if (totalRow) {
-				totalRow.deleteCell(-1);
-			}
+			// // 更新总计行
+			// const totalRow = table.rows[row_num + 1];
+			// if (totalRow) {
+			// 	totalRow.deleteCell(-1);
+			// }
+			removeTotalRow();
 		}
 
 		// 减少行的函数
 		function removeRow() {
 			if (row_num === 0 || row_num === 1) return;
+			removeTotalRow();
 			const table = document.getElementById("aa-table");
 			table.deleteRow(-1);
 			row_num--;
@@ -358,6 +362,7 @@
 			}
 
 			// 在这里添加总计行
+			total_row_flag = 1;
 			let totalRow = table.rows[row_num + 1];
 			if (!totalRow) {
 				totalRow = table.insertRow(-1);

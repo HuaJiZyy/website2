@@ -6,7 +6,7 @@
 
 <!-- * [Facebook](https://www.facebook.com/HuaJiZyy/) -->
 
-* [STEAM](https://steamcommunity.com/id/HuaJiZyy/)
+* [STEAM](https://steamcommunity.com/id/zyyjyw/)
 
 * [Twitter](https://twitter.com/HuaJiZyy)
 
@@ -14,11 +14,11 @@
 
 * [淘宝店](https://shop210292260.taobao.com/)
 
-* [小红书](https://www.xiaohongshu.com/user/profile/5fe8160f00000000010006e1?xhsshare=CopyLink&appuid=5fe8160f00000000010006e1&apptime=1681197575)
+* [小红书](https://www.xiaohongshu.com/user/profile/5fe8160f00000000010006e1)
 
+* [新浪微博](https://weibo.com/u/6458074209)
 
-
-* 邮箱：  
+* 邮箱  
     * zyyjyw@gmail.com  
     * zyyjyw@qq.com  
     * zyyjyw@foxmail.com  

@@ -18,5 +18,7 @@
 
 [996.ICU](https://996.icu)
 
+[大富翁在线](https://richup.io)
+
 [此网站的备用地址](https://zyyjyw.gitee.io)
 

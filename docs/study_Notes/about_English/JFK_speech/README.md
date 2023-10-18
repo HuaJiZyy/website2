@@ -2,7 +2,7 @@
 > 本文完成于: 2022.12  
 部分内容由我根据音频听写，如有错误，请联系zyyjyw@gmail.com进行修改。
 
-## ADDRESS DURING THE CUBAN MISSILE CRISIS <!-- {docsify-ignore} -->
+## ADDRESS DURING THE CUBAN MISSILE CRISIS
 
 Good evening my fellow citizens: 
 
@@ -70,3 +70,89 @@ Our goal is not the victory of might, but the vindication of right--not peace at
 Thank you and good night.
 
 > 演讲原音频: https://www.youtube.com/watch?v=EgdUgzAWcrw
+
+## Vocabulary List
+
+surveillance n. 监视  
+missile n. 导弹  
+imprisoned adj. 被关押的  
+imprison v. 关押  
+preliminary adj. 初步的  
+course n. 进程/课程  
+installation n. 安装  
+ballistic adj. 弹道的  
+nautical adj. 航海的 (nautical mile 海里)  
+intermediate adj. 中级的  
+jet bomber 喷气轰炸机  
+uncrate v. 从箱中取出 (crate n. 箱子)  
+assemble v. 装配  
+strategic adj. 战略的  
+strategy n. 策略  
+constitute v. 形成, 构成  
+explicit adj. 明确的  
+flagrant adj. 丑恶可耻的  
+joint resolution of the Congress 国会两院(Senate参议院和House of Representatives众议院)的共同决议  
+Charter n. 宪章  
+retain v. 保持  
+armament n. 武器  
+exclusive adj. 独有的  
+retaliate v. 报复  
+blow n. 打击/吹  
+render v. 提供  
+deception n. 欺骗  
+peril n. 危险  
+perilous adj. 危险的  
+deploy v. 部署 (deployment n. 部署)  
+upset v. 打破/使苦恼  
+precarious adj. 危险的  
+status quo 现状  
+cloak n. 掩饰/披风  
+bull's eye 靶心  
+hemispheric adj. 半球的 (hemisphere n. 半球)  
+clandestine adj. 秘密的  
+commitment n. 承诺 (commit v. 承诺/犯罪)  
+foe n. 敌人  
+swerve v. 突然转向 (unswerving adj. 不渝的)  
+objective n. 目标 / adj. 客观的  
+withdrawal n. 撤销  
+befit v. 适合于  
+divert v. 转向  
+irritant n. 烦心事  
+fanatic n. 极端分子  
+shrink v. 退缩  
+endorse v. 支持/代言  
+bound adj. 准备前往 / v. 捆, 束  
+communique n. 公报  
+armed forces 军队  
+eventuality n. 可能发生的事  
+technician n. 技术员  
+hazard n. 危险  
+precaution n. 预防措施  
+evacuate v. 撤出  
+dependent n. 家属  
+personnel n. 全体人员  
+standby adj. 待命的  
+basis n. 基础  
+consultation n. 商讨会  
+invoke v. 唤起  
+convoke v. 召开  
+prompt adj. 及时的/ n. 提示词  
+dismantle v. 拆除  
+lift v. 去除/举起  
+reckless adj. 鲁莽的  
+abyss n. 深渊  
+refrain v. 克制  
+captive adj. 被控制的  
+nationalist adj. 国家主义的  
+betray v. 背叛  
+conspiracy n. 阴谋  
+undermine v. 暗中破坏  
+pawn n. 走卒  
+tyrant n. 暴君  
+worship v. 敬神  
+degradation n. 屈辱  
+casualty n. 损失  
+denunciation n. 谴责  
+incur v. 招致, 引起  
+surrender / submission n. 投降  
+vindicate v. 证明 (vindication n. 证明)  
