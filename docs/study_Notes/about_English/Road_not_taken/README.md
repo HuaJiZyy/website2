@@ -25,6 +25,14 @@ Somewhere ages and ages hence:
 **I took the one less traveled by,**  
 **And that has made all the difference.**  
 
+## Vocabulary List  
+
+diverge v. 分叉  
+bend v. 弯曲  
+undergrowth n. 灌木丛  
+claim v. 主张; 声称; 要求  
+tread v. 行走 (past tense **trod** past participle **trodden**)  
+hence adv. 从现在起; 因此  
 
 
 ## Analysis
