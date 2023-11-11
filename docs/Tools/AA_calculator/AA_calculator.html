@@ -150,7 +150,7 @@
 				headerCell.appendChild(totalCostInput);
 
 
-				// 创建下拉框以选择负责人
+				// 创建下拉框以选择付款人
 				const leaderSelect = document.createElement("select");
 				leaderSelect.className = "leader-select-class";  // 为每个下拉菜单分配相同的类名, 计算时遍历用
 				leaderSelect.onchange = updateAmounts;
@@ -186,13 +186,18 @@
 
 			// 减少列的函数
 			function removeColumn() {
-				if (colum_num === 0 || colum_num === 1) return;
+				// 最少参与人数: 2
+				if (colum_num === 2) {
+					alert("参与人不能再少啦! ");
+					return;
+				}
+
 				const table = document.getElementById("aa-table");
 				for (let i = 0; i <= row_num; i++) {
 					table.rows[i].deleteCell(-1);
 				}
 				colum_num--;
-				// 更新领导选项并重新计算金额
+				// 更新付款人选项并重新计算金额
 				updatePayer();
 				updateAmounts();
 				removeTotalRow();
@@ -200,7 +205,12 @@
 
 			// 减少行的函数
 			function removeRow() {
-				if (row_num === 0 || row_num === 1) return;
+				// 最少项目数: 1
+				if (row_num === 1) {
+					alert("项目不能再减少啦! ");
+					return;
+				}
+
 				removeTotalRow();
 				const table = document.getElementById("aa-table");
 				table.deleteRow(-1);
@@ -211,20 +221,38 @@
 			// 更新金额的函数
 			function updateAmounts() {
 				const table = document.getElementById("aa-table");
-				let totalAmounts = Array(colum_num).fill(0); // 创建一个长度为人数的数组, 初始值为0
+				// let totalAmounts = Array(colum_num).fill(0); // 创建一个长度为人数的数组, 初始值为0
+
+				// 遍历每一行(即每个项目)
 				for (let i = 1; i <= row_num; i++) {
 					const row = table.rows[i];
 					const totalCostInput = row.cells[0].getElementsByTagName("input")[1]; // 获取第一列（即每行的第一个单元格）中的第二个输入框，该输入框用于输入这一行代表的项目的总花费
-					const totalCost = parseFloat(totalCostInput.value) || 0; // 解析总花费，如果解析失败则默认为0
+					const totalCost = parseFloat(totalCostInput.value); // 解析总花费，如果解析失败则默认为0
 
-					//如果某项目不均分花费, 则跳过这一行;
-					if (totalCost == 0) {
-						continue;
+					//如果某项目不均分花费
+					if (isNaN(totalCost)) {
+						// for (let j = 1; j <= colum_num; j++) {
+						// 	const cell = row.cells[j];
+						// 	const checkBox = cell.getElementsByTagName("input")[1]; // 勾选框
+						// 	const amountInput = cell.getElementsByTagName("input")[0]; // 每个人每个项目的开销框
+						// 	if (checkBox.checked) {
+						// 		if (isNaN(amountInput)) {
+						// 			amountInput = 0.00;
+						// 		}
+						// 		else {
+						// 			amountInput = parseFloat(amountInput).toFixed(2);
+						// 		}
+						// 	}
+						// 	else {
+						// 		amountInput = "";
+						// 	}
+						// }
+						continue; // 不进行下一步均分, 直接去看下一行
 					}
 
 					// 初始化参与者数量
 					let participants = 0;
-					// 遍历当前行的每一个单元格（除了第一个单元格），检查每个单元格中的第二个输入框（即复选框）是否被选中，如果选中，表示该列代表的人参与了这个项目，因此参与者数量加一
+					// 获取参与者数量: 遍历当前行的每一个单元格（除了第一个单元格），检查每个单元格中的第二个输入框（即复选框）是否被选中，如果选中，表示该列代表的人参与了这个项目，因此参与者数量加一
 					for (let j = 1; j <= colum_num; j++) {
 						const cell = row.cells[j];
 						const checkBox = cell.getElementsByTagName("input")[1];
@@ -242,22 +270,23 @@
 					leaderIndex = leaderSelect.value - 1;
 					// 如果选中了付款人，那么更新每个参与者需要支付的金额，并且从付款人需要支付的总金额中扣除这个项目的总花费
 					if (leaderIndex >= 0) {
+						// 遍历每一列(即每一个人)
 						for (let j = 1; j <= colum_num; j++) {
 							const cell = row.cells[j];
-							const checkBox = cell.getElementsByTagName("input")[1];
+							const checkBox = cell.getElementsByTagName("input")[1]; // 获取checkbox, 看看这个人有没有勾选上
 							const amountInput = cell.getElementsByTagName("input")[0]; // 获取每个单元格中的第一个输入框，该输入框用于显示这个人需要支付的金额
 
-							// 如果这个人参与了这个项目，那么更新他需要支付的金额，并把这个金额加到他的总花费上
+							// 如果这个人参与了这个项目，那么更新他需要支付的金额
 							if (checkBox.checked) {
 								amountInput.value = perPersonCost.toFixed(2);
-								totalAmounts[j - 1] += parseFloat(perPersonCost.toFixed(2));
+								// totalAmounts[j - 1] += parseFloat(perPersonCost.toFixed(2));
 							} else {
 								// 如果这个人没有参与这个项目，那么清空他在这个项目中的支付金额
 								amountInput.value = '';
 							}
 						}
 						// 从付款人需要支付的总金额中扣除这个项目的总花费
-						totalAmounts[leaderIndex] -= totalCost;
+						// totalAmounts[leaderIndex] -= totalCost;
 					}
 				}
 			}
@@ -266,29 +295,29 @@
 			function updatePayer() {
 				for (let i = 1; i <= row_num; i++) {
 					const row = document.getElementById("aa-table").rows[i];
-					const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
-					const previousSelectedValue = leaderSelect.value; // 保存当前选中的值
-					while (leaderSelect.options.length > 0) {
-						leaderSelect.options.remove(0);
+					const PayerSelect = row.cells[0].getElementsByTagName("select")[0];
+					const previousSelectedValue = PayerSelect.value; // 保存当前选中的值
+					while (PayerSelect.options.length > 0) {
+						PayerSelect.options.remove(0);
 					}
 
 					// 添加“未选择”选项
 					const unselectedOption = document.createElement("option");
 					unselectedOption.text = "未选择";
 					unselectedOption.value = "0";
-					leaderSelect.options.add(unselectedOption);
+					PayerSelect.options.add(unselectedOption);
 
 					for (let j = 1; j <= colum_num; j++) {
 						const option = document.createElement("option");
 						option.text = document.getElementById("aa-table").rows[0].cells[j].getElementsByTagName("input")[0].value;
 						option.value = j;
-						leaderSelect.options.add(option);
+						PayerSelect.options.add(option);
 					}
-					leaderSelect.value = previousSelectedValue; // 将先前选中的值设置回来
+					PayerSelect.value = previousSelectedValue; // 将先前选中的值设置回来
 				}
 			}
 
-			// 计算不平均分配的项目的总开销
+			// 计算不平均分配的项目的总开销(其实平均分的也是在这里计算的)
 			function calculateTotalCostForProject(projectIndex) {
 				if (projectIndex < 1 || projectIndex > row_num) {
 					console.error("Invalid project index");
@@ -313,7 +342,6 @@
 
 			// 计算总金额
 			function calculateTotalAmounts() {
-
 				// 首先判断是否有项目没有填写付款人, 如果有, 弹出提示, 不进行计算
 				let allSelectElements = document.querySelectorAll(".leader-select-class");
 				for (let i = 0; i < allSelectElements.length; i++) {
@@ -324,17 +352,58 @@
 					}
 				}
 
-				total_row_flag = 1; // 更新总计行flag
 				const table = document.getElementById("aa-table");
+
+				// 如果某项目不均分花费, 则遍历每一列, 已勾选的: (保留两位小数, 空的置零), 未勾选的: 清空.
+				// 遍历每一行(即每个项目)
+				for (let i = 1; i <= row_num; i++) {
+					const row = table.rows[i];
+					const totalCostInput = row.cells[0].getElementsByTagName("input")[1]; // 获取第一列（即每行的第一个单元格）中的第二个输入框，该输入框用于输入这一行代表的项目的总花费
+					const totalCost_of_NoAVG = parseFloat(totalCostInput.value); // 解析总花费
+					if (isNaN(totalCost_of_NoAVG)) {
+						for (let j = 1; j <= colum_num; j++) {
+							const cell = row.cells[j];
+							const checkBox = cell.getElementsByTagName("input")[1]; // 勾选框
+							let amountInput = cell.getElementsByTagName("input")[0]; // 每个人每个项目的开销框
+							if (checkBox.checked) { // 已勾选的: (保留两位小数, 空的置零)
+								if ("" == (amountInput.value)) {
+									// alert("if");
+									amountInput.value = (0.00).toFixed(2);
+								}
+								else {
+									// alert("else");
+									amountInput.value = parseFloat(amountInput.value).toFixed(2);
+								}
+							}
+							else { // 未勾选的,清空
+								amountInput.value = "";
+							}
+						}
+					}
+				}
+
+				total_row_flag = 1; // 更新总计行flag
 				let totalAmounts = Array(colum_num).fill(0);
+
+				// 遍历每一行(即每一个项目)
 				for (let i = 1; i <= row_num; i++) {
 					const row = table.rows[i];
 					const leaderSelect = row.cells[0].getElementsByTagName("select")[0];
 					const leaderIndex = parseInt(leaderSelect.value);
-					const totalCostInput = row.cells[0].getElementsByTagName("input")[1];
-					const totalCost = parseFloat(totalCostInput.value) || 0;
-					const totalCost2 = parseFloat(calculateTotalCostForProject(i));
+
+					// 获取均分开销的项目的总花费(这地方就没用过)
+					// const totalCostInput = row.cells[0].getElementsByTagName("input")[1];
+					// const totalCost = parseFloat(totalCostInput.value) || 0;
+
+					// 获取项目的总花费
+					const totalCost = parseFloat(calculateTotalCostForProject(i));
+
+					// 把总花费也保留两位小数, 这样比较美观(这地方有点小bug)
+					// let amount = parseFloat(row.cells[0].getElementsByTagName("input")[1]);
+					// row.cells[0].getElementsByTagName("input")[1].value = amount.toFixed(2);
+
 					if (leaderIndex !== 0) {
+						// 遍历每一列(即每个人)
 						for (let j = 1; j <= colum_num; j++) {
 							const cell = row.cells[j];
 							const checkBox = cell.getElementsByTagName("input")[1];
@@ -343,7 +412,7 @@
 								totalAmounts[j - 1] += parseFloat(amountInput.value);
 							}
 							if (leaderIndex === j) {
-								totalAmounts[j - 1] -= totalCost2;
+								totalAmounts[j - 1] -= totalCost;
 							}
 						}
 					}
