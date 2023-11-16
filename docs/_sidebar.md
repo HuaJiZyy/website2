@@ -34,7 +34,7 @@
     * [晚上吃什么](Tools/Dinner/)
     * [团建AA分账器](Tools/AA_calculator/)
     * [GPA计算器](Tools/GPA_calculator/)
-    * [文件传输(Beta)](files/)
+    * [老仓库网盘(Beta)](Tools/NetDisk/)
 
 
 
@@ -44,8 +44,6 @@
     * [C++笔记](personal_resources/Cpp_notes/)
     * [备忘](personal_resources/Memo/)
 
-
-<!-- * [GPA计算器](GPA_calculator/) -->
 
 * [友情链接](websites_Of_Friends/)
 

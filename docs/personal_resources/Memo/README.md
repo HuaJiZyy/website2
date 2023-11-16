@@ -20,6 +20,40 @@
 sudo killall -HUP mDNSResponder
 ```
 ## Linux常用命令
+### rsync命令
+
+```bash
+rsync -avz --progress /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/ root@66.135.29.181:/var/www/zhangyiyang.xyz
+```
+
+这里：
+- `-a` 是“归档”模式，它保留原文件的权限和元数据，并尝试保留软链接等。
+- `-v` 代表“详细模式”（verbose），这样可以看到更多的输出信息。
+- `-z` 开启压缩，有助于加快传输速度。
+- `--progress` 显示文件传输的进度信息。
+- `/path/to/local/folder` 是您Mac上的文件夹路径。
+- `username` 是您在Linux服务器上的用户名。
+- `server_ip` 是您Linux服务器的IP地址。
+- `/path/to/remote/folder` 是服务器上的目标文件夹路径。
+
+`rsync` 是非常灵活的，其行为取决于你如何指定源路径和目标路径。如果您想要将整个文件夹连同文件夹本身一起复制到目标路径，需要在源路径后面加上斜杠 `/`。这里有两种情况：
+
+1. 如果您不在源文件夹的路径后面加上斜杠 `/`，`rsync` 会复制文件夹内的内容到目标路径，而不是复制文件夹本身。
+
+   ```bash
+   rsync -av /path/to/source_folder/ /path/to/destination_folder/
+   ```
+
+   在这个例子中，`source_folder` 内的所有内容（而不是 `source_folder` 文件夹本身）会被复制到 `destination_folder` 中。
+
+2. 如果您在源文件夹的路径后面加上斜杠 `/`，`rsync` 会复制整个文件夹到目标路径。
+
+   ```bash
+   rsync -av /path/to/source_folder /path/to/destination_folder/
+   ```
+
+   在这个例子中，`source_folder` 本身及其所有内容会被复制到 `destination_folder` 中。
+
 ### scp命令
 `scp` 是 Secure Copy（安全复制）的缩写，是基于 SSH (Secure Shell) 的一种网络协议，用于在本地主机和远程主机之间，或两个远程主机之间安全地传输文件。`scp` 命令是在 Linux 和 macOS 系统中常用的一个命令行工具，也可以在 Windows 上通过某些应用程序（如 Putty）使用。
 
@@ -68,20 +102,24 @@ sudo reboot
 server {
     listen 443 ssl;
     server_name zhangyiyang.xyz www.zhangyiyang.xyz;
+    client_max_body_size 1000M;
 
     ssl_certificate /etc/nginx/ssl/zhangyiyang.xyz.pem;
     ssl_certificate_key /etc/nginx/ssl/zhangyiyang.xyz.key;
 
+    # 处理 /files 路径的请求，全部代理到 Flask 应用程序
+    location ^~ /files {
+        proxy_pass http://127.0.0.1:5000; # 确保 Flask 应用正在运行并监听在 5000 端口
+        include proxy_params;
+        proxy_redirect off;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # 网站根目录的请求仍然按原来的方式处理
     location / {
         root /var/www/zhangyiyang.xyz;
         index index.html;
     }
-}
-
-server {
-    listen 80;
-    server_name zhangyiyang.xyz;
-    return 301 https://$host$request_uri;
 }
 ```
 检查Nginx服务状态:

@@ -15,25 +15,6 @@ function createRectangles() {
         rectangleContainer.appendChild(rectangle);
     }
 }
-// function createRectangles() {
-//     rectangleContainer.innerHTML = '';
-//     for (let i = 0; i < options.length; i++) {
-//         const rectangle = document.createElement('div');
-//         rectangle.className = 'rectangle';
-
-//         // 创建一个新的输入框并设置其值为选项
-//         const input = document.createElement('input');
-//         input.type = 'text';
-//         input.value = options[i];
-//         input.addEventListener('input', () => {
-//             // 当用户在输入框中键入时，更新选项数组
-//             options[i] = input.value;
-//         });
-
-//         rectangle.appendChild(input);  // 将输入框添加到矩形中
-//         rectangleContainer.appendChild(rectangle);
-//     }
-// }
 
 
 clearOptionsButton.addEventListener('click', () => {

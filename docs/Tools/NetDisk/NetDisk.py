@@ -8,7 +8,7 @@ app = Flask(__name__) # 创建了一个 Flask 实例
 app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024
 
 # 这里设置了一个常量 UPLOAD_FOLDER，用来指定上传文件存储的文件夹名称。然后将这个路径配置到 Flask 应用的配置中，方便后续引用。
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = '/var/www/zhangyiyang.xyz/Tools/NetDisk/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # 使用 os.makedirs 函数创建定义的上传文件夹，如果文件夹已经存在，则不会抛出错误（exist_ok=True 参数的作用）。
@@ -20,8 +20,8 @@ def index():
     # HTML 表单允许用户上传文件到 /files/upload
     return '''
     <!doctype html>
-    <title>临时网盘</title>
-    <h1>上传文件到临时网盘</h1>
+    <title>老仓库网盘</title>
+    <h1>上传文件到老仓库网盘</h1>
     <form method=post enctype=multipart/form-data action="/files/upload">
       <input type=file name=file>
       <input type=submit value=上传>
@@ -46,7 +46,7 @@ def upload_file():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return f'''
         文件上传成功！<br><br>
-        <a href="/files/download/{filename}">点击这里下载文件或复制链接地址</a>
+        <a href="/files/download/{filename}">点击这里下载文件或右键复制链接地址</a>
         '''
         # 如果文件对象存在，并且文件名有效，将文件保存到之前设置的上传文件夹中。然后返回一个确认信息，并提供一个链接让用户可以下载他们刚刚上传的文件。
 

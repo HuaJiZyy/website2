@@ -27,27 +27,34 @@ input {
     border-radius: 5px;
 }
 
-button {
+/* 定义通用按钮样式 */
+button,
+.button {
     background-color: #198754;
+    /* 按钮背景颜色 */
     color: #fff;
+    /* 文字颜色 */
     border: none;
+    /* 无边框 */
     padding: 0.5rem 1rem;
+    /* 内边距 */
     font-size: 1rem;
+    /* 字体大小 */
     border-radius: 5px;
+    /* 边框圆角 */
     cursor: pointer;
+    /* 鼠标悬停时的指针样式 */
     margin-top: 1rem;
+    /* 外边距 */
 }
 
-button2 {
+/* 特定按钮样式，用于替换 button2 */
+.my-button-danger {
     background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
+    /* 按钮背景颜色，改变为另一种颜色 */
+    /* 其他样式与 .button 相同，所以不需要重复 */
 }
+
 
 .my-button {
     /* 你的样式 */
