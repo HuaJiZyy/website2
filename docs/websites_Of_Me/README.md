@@ -21,6 +21,7 @@
 * 邮箱  
     * zyyjyw@gmail.com  
     * zyyjyw@qq.com  
+    * zyyjyw@outlook.com  
     * zyyjyw@foxmail.com  
     * zyyjyw@mail.dlut.edu.cn  
 

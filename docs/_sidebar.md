@@ -21,7 +21,6 @@
 - **旁门左道**
     * [魔方盲拧](eat_drink_play_laugh/magic_Cube_Blindfolded/)
     * [ChatGPT用法](eat_drink_play_laugh/chatGPT_usage/)
-    * [辣炒花蚬子做法](eat_drink_play_laugh/spicy_clam/)
     * [Aqara空调伴侣P3配置方法](eat_drink_play_laugh/Aqara_P3/)
     * [Mac上ClashX快捷键配置方法](eat_drink_play_laugh/AppleScript/)
 - **个人随笔**
@@ -29,13 +28,16 @@
     * [关于成绩单](personal_Notes/grade_report/)
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于长者](personal_Notes/about_him/)
-    * [关于游戏](personal_Notes/about_game/)
+    * [Word字号转换](personal_Notes/font_size/)
+    <!-- * [关于游戏](personal_Notes/about_game/) -->
 - **工具**
     * [晚上吃什么](Tools/Dinner/)
     * [团建AA分账器](Tools/AA_calculator/)
     * [GPA计算器](Tools/GPA_calculator/)
     * [老仓库网盘(Beta)](Tools/NetDisk/)
-
+- **菜谱**
+    * [辣炒花蚬子](Recipes/spicy_clam/)
+    * [番茄肉酱意面](Recipes/Spaghetti_with_meat_sauce/)
 
 
 - **自用资源**
