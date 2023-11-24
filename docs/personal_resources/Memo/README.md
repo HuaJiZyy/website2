@@ -96,6 +96,11 @@ scp -r /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/* root@66.135.2
 sudo reboot
 ```
 
+### 安装.deb文件
+```
+sudo apt install ./app.deb
+```
+
 ## Nginx配置
 目录: `/etc/nginx/sites-available/zhangyiyang.xyz`
 ```
