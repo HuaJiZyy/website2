@@ -1,6 +1,6 @@
 # 首页
 <!-- 你终于爬过来了, 欢迎你! -->
-你好, 这里是老仓库的角落 https://zhangyiyang.xyz
+你好, 这里是张义洋的个人主页 https://zhangyiyang.xyz
 <!-- > ![img](climb.gif) -->
 <!-- > [cli2mb](ad.mp4 ':include :type=video width=100% height=400px') -->
 <!-- [cinwell website](https://cinwell.com ':include :type=iframe width=100%') -->

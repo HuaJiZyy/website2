@@ -207,5 +207,5 @@ sudo killall -HUP mDNSResponder
 ```
 
 ## macOS终端快捷键
-control + A 光标移至行首
-control + E 光标移至行尾
+`control + A` 光标移至行首
+`control + E` 光标移至行尾
