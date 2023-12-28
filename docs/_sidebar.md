@@ -12,7 +12,7 @@
         * [John F. Kennedy演讲](study_Notes/about_English/JFK_speech/)
         * [Twilight Struggle演讲摘录](study_Notes/about_English/Twilight_Struggle_speeches/)
         * [The Road Not Taken](study_Notes/about_English/Road_not_taken/)
-        * [附加资料(Beta)](study_Notes/about_English/three_branches_of_governments/)
+        * [视频资源](study_Notes/about_English/three_branches_of_governments/)
     * **- 关于计算机科学**
         * [密码学](study_Notes/about_computer_science/cipher/)
         * [学习资源](study_Notes/about_computer_science/study_resources/)
