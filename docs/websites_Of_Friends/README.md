@@ -20,5 +20,5 @@
 
 [大富翁在线](https://richup.io)
 
-[此网站的备用地址](https://zyyjyw.gitee.io)
+[此网站的备用子集](https://zyyjyw.gitee.io)
 

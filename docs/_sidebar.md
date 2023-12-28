@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
-* [首页](/)
+* [**首页**](/)
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
@@ -10,7 +10,7 @@
         * [提问的智慧](study_Notes/forwards/ask/)
     * **- 关于英语**
         * [John F. Kennedy演讲](study_Notes/about_English/JFK_speech/)
-        * [Twilight Struggle演讲摘录(Beta)](study_Notes/about_English/Twilight_Struggle_speeches/)
+        * [Twilight Struggle演讲摘录](study_Notes/about_English/Twilight_Struggle_speeches/)
         * [The Road Not Taken](study_Notes/about_English/Road_not_taken/)
         * [附加资料(Beta)](study_Notes/about_English/three_branches_of_governments/)
     * **- 关于计算机科学**
@@ -48,6 +48,6 @@
     * [备忘](personal_resources/Memo/)
 
 
-* [友情链接](websites_Of_Friends/)
+* [**友情链接**](websites_Of_Friends/)
 
-* [个人链接](websites_Of_Me/)
+* [**个人链接**](websites_Of_Me/)
