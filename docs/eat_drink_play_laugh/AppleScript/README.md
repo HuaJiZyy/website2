@@ -44,10 +44,10 @@ end tell
 
 - 在代码窗口中输入所需的AppleScript代码(具体内容见[下一部分](https://zhangyiyang.xyz/#/eat_drink_play_laugh/AppleScript/?id=clashx%E7%9A%84applescript%E4%BB%A3%E7%A0%81)). 这里以Clash开启/关闭代理的代码为例:  
 ![img](5.png ':size=60%')
-- command+s保存此文件, 添加一个自定义命名即可.
+- `command` + `s`保存此文件, 添加一个自定义命名即可.
 
 ## 添加至系统快捷键
-- 在System Settings(系统设置) -> Keyboard -> Keyboard Shortcuts -> General 中勾选所需的服务并自定义一个系统级快捷键即可.
+- 在System Settings(系统设置) -> Keyboard -> Keyboard Shortcuts -> Services -> General 中勾选所需的服务并自定义一个系统级快捷键即可.
 ![img](6.png ':size=60%')
 
 ## ClashX的AppleScript代码

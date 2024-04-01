@@ -1,6 +1,6 @@
 ## 约翰·肯尼迪在古巴导弹危机中的电视演讲 <!-- {docsify-ignore} -->
 > 本文完成于: 2022.12  
-部分内容根据音频听写，如有错误，请联系zyyjyw@gmail.com进行修改。
+部分内容根据音频听写, 如有错误, 请联系zyyjyw@gmail.com进行修改。
 
 ## ADDRESS DURING THE CUBAN MISSILE CRISIS
 
@@ -66,7 +66,6 @@ Our goal is not the victory of might, but the **vindication** of right — not p
 
 Thank you and good night.
 
-> 演讲原音频: https://www.youtube.com/watch?v=EgdUgzAWcrw
 
 ## Vocabulary List
 
@@ -153,3 +152,5 @@ incur v. 招致, 引起
 denunciation n. 谴责  
 surrender / submission n. 投降  
 vindicate v. 证明 (vindication n. 证明)  
+
+> 演讲原音频: https://www.youtube.com/watch?v=EgdUgzAWcrw
