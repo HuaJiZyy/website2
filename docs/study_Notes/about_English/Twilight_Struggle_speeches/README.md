@@ -37,8 +37,8 @@
 
 2. *Ronald Reagan(里根), Berlin Wall Speech, 1987:*
    - The totalitarian world produces **backwardness** because it does such violence to the spirit, **thwarting** the human impulse to create, to enjoy, to **worship**.
-
-
+3. *Lee Kuan Yew(李光耀), Hong Kong Speech, 1992:*
+   - I have never believed that democracy brings progress, I know it to have brought **regression**.
 
 ## Vocabulary List
 
@@ -56,7 +56,7 @@ tear v. 拆掉/撕开; n. 眼泪 (past tense **tore** past participle **torn**)
 backwardness n. 落后  
 thwart v. 阻挠  
 worship v. 敬神  
-
+regression n. 倒退
 
 > 既然你都翻到这了, 就请你看一只可爱的小鸟吧!
 <iframe src="//player.bilibili.com/player.html?aid=787888257&bvid=BV1L14y1y7BP&cid=1252219027&p=1" width="100%" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>

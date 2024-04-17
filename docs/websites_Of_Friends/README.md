@@ -3,6 +3,7 @@
 <!-- [荆泽旭的主页(已挂)](https://jingzexu.top) -->
 
 <!-- [杨希杰的个人网站](https://yang-xijie.github.io/) -->
+[王才雨的个人网站](https://dalaizi.github.io)
 
 [大连理工大学软件学院资源库](https://github.com/NAOSI-DLUT/DLUT_SE_Courses)
 
