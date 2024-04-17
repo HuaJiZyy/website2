@@ -19,14 +19,36 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 @app.route('/files')
 def index():
     # HTML 表单允许用户上传文件到 /files/upload
+    # return '''
+    # <!doctype html>
+    # <title>老仓库网盘</title>
+    # <h1>上传文件到老仓库网盘</h1>
+    # <form method=post enctype=multipart/form-data action="/files/upload">
+    #   <input type=file name=file>
+    #   <input type=submit value=上传>
+    # </form>
+    # '''
     return '''
     <!doctype html>
-    <title>老仓库网盘</title>
-    <h1>上传文件到老仓库网盘</h1>
-    <form method=post enctype=multipart/form-data action="/files/upload">
-      <input type=file name=file>
-      <input type=submit value=上传>
-    </form>
+    <html>
+    <head>
+        <title>老仓库网盘</title>
+        <script>
+            function onUpload() {
+                document.getElementById('submit').style.display = 'none';
+                document.getElementById('uploading').style.display = 'block';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>上传文件到老仓库网盘</h1>
+        <form method=post enctype=multipart/form-data action="/files/upload">
+            <input type=file name=file>
+            <input id="submit" type=submit value=上传 onclick="onUpload()">
+            <p id="uploading" style="display: none;">文件正在上传, 请不要离开...</p>
+        </form>
+    </body>
+    </html>
     '''
 
 # 这个函数返回一个 HTML 表单的字符串。表单包含了一个文件输入和一个提交按钮。当用户填写这个表单并提交时，请求会被发送到 /upload 路径。
