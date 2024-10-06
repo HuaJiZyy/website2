@@ -52,13 +52,10 @@ chmod [options] mode file
 chmod +x filename
 ```
 
-如果你想设置一个文件的权限为所有者读写执行、组和其他用户只读，你可以使用以下命令：
-
+如果你想给文件的所有者、所在的用户组以及其他用户赋予读、写和执行的权限。可以使用以下命令：
 ```bash
-chmod 744 filename
+chmod 777 filename
 ```
-
-请注意，改变文件或目录的权限可能会影响你和其他用户对文件或目录的访问，所以在使用 `chmod` 命令时需要谨慎。
 
 ### rsync
 
@@ -209,3 +206,16 @@ sudo killall -HUP mDNSResponder
 ## macOS终端快捷键
 `control + A` 光标移至行首
 `control + E` 光标移至行尾
+
+## Windows终端代理命令
+
+```cmd
+set http_proxy=http://127.0.0.1:1080
+set https_proxy=http://127.0.0.1:1080
+```
+
+```powershell
+$env:http_proxy="http://127.0.0.1:1080"
+$env:https_proxy="http://127.0.0.1:1080"
+
+```

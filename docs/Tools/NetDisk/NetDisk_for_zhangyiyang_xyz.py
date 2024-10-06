@@ -67,9 +67,24 @@ def upload_file():
     if file:
         filename = file.filename
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # return f'''
+        # 文件上传成功！<br><br>
+        # <div style="display: flex; justify-content: space-between;">
+        #     <div>
+        #         <a href="/files/download/{filename}">下载该文件</a>
+        #     </div>
+        #     <div>
+        #         <a href="/files/download/{filename}" onclick="event.preventDefault(); navigator.clipboard.writeText(this.href);">复制分享链接</a>
+        #     </div>
+        # </div>
+        # '''
         return f'''
         文件上传成功！<br><br>
-        <a href="/files/download/{filename}">点击这里下载文件或右键复制链接地址</a>
+        文件分享链接为: <a href="/files/download/{filename}">https://zhangyiyang.xyz/files/download/{filename}</a><br><br>
+        <div style="display: flex; justify-content: flex-start; gap: 20px;">
+            <button onclick="window.location.href='/files/download/{filename}'">下载该文件</button>
+            <button onclick="navigator.clipboard.writeText(window.location.origin + '/files/download/{filename}')">复制链接到剪贴板</button>
+        </div>
         '''
         # 如果文件对象存在，并且文件名有效，将文件保存到之前设置的上传文件夹中。然后返回一个确认信息，并提供一个链接让用户可以下载他们刚刚上传的文件。
 
