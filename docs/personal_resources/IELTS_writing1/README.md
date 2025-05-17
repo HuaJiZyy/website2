@@ -68,7 +68,7 @@ Australians, English-speaking people, and non-English-speaking people.
 
 Overall, it is clear that native Australians have the largest proportion of workforce, and probably because of the development of economy, unemployed rate has showed a decline through 5 years from 1998 to 2003.
 
-Native Australians' proportion of workforce is up to 75%, which is far ahead of th other 2 kinds of people. Yet, the proportion of non-English-speaking people is less than 20%, only slightly higher than the figure for English-speaking people.
+Native Australians' proportion of workforce is up to 75%, which is far ahead of the other 2 kinds of people. Yet, the proportion of non-English-speaking people is less than 20%, only slightly higher than the figure for English-speaking people.
 
 In 1998, English-speaking people's unemployed rate was 8%, which was at its highest point through the five years, followed by the figure for native Australians, whose unemployed rate was 4%. Only 3% of non-English-speaking people faced unemployment in 1998, which was the least of all kinds of people. The unemployed rate of English-speaking as well as non-English-speaking people showed a stable decline over the five years, especially for English-speaking ones, whose figure in 2003 was only about 3%. After some increase, however, the figure for native Australians also decreased, at 2% in 2003.
 

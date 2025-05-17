@@ -30,11 +30,12 @@
     * [关于长者](personal_Notes/about_him/)
     * [Word字号转换](personal_Notes/font_size/)
     * [关于游戏](personal_Notes/about_game/)
-- **工具**
+    * [About Diversity](personal_Notes/about_diversity/)
+- **Tools**
     * [晚上吃什么](Tools/Dinner/)
-    * [GPA计算器](Tools/GPA_calculator/)
-    * [团建AA分账器](Tools/AA_calculator/)
-    * [老仓库网盘(Beta)](Tools/NetDisk/)
+    * [GPA Calculator](Tools/GPA_calculator/)
+    * [Split Bill Calculator](Tools/AA_calculator/)
+    * [Old Warehouse Cloud Storage (Beta)](Tools/NetDisk/)
 - **菜谱**
     * [辣炒花蚬子](Recipes/spicy_clam/)
     * [番茄肉酱意面(Beta)](Recipes/Spaghetti_with_meat_sauce/)
@@ -44,7 +45,7 @@
     * [雅思小作文](personal_resources/IELTS_writing1/)
     * [雅思大作文](personal_resources/IELTS_writing2/)
     * [关于成绩单](personal_resources/grade_report/)
-    * [C++笔记](personal_resources/Cpp_notes/)
+    * [笔记](personal_resources/Cpp_notes/)
     * [备忘](personal_resources/Memo/)
 
 

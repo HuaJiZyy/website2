@@ -143,15 +143,15 @@ sudo apt install ./app.deb
 ```
 server {
     listen 443 ssl;
-    server_name zhangyiyang.xyz www.zhangyiyang.xyz;
+    server_name zhangyiyang.xyz  www.zhangyiyang.xyz;
     client_max_body_size 1000M;
 
-    ssl_certificate /etc/nginx/ssl/zhangyiyang.xyz.pem;
-    ssl_certificate_key /etc/nginx/ssl/zhangyiyang.xyz.key;
+    ssl_certificate /home/zyy/Desktop/zyy/CODE/websites/zhangyiyang_xyz/certificate/zhangyiyang.xyz_bundle.pem;
+    ssl_certificate_key /home/zyy/Desktop/zyy/CODE/websites/zhangyiyang_xyz/certificate/zhangyiyang.xyz.key;
 
     # 处理 /files 路径的请求，全部代理到 Flask 应用程序
     location ^~ /files {
-        proxy_pass http://127.0.0.1:5000; # 确保 Flask 应用正在运行并监听在 5000 端口
+        proxy_pass http://127.0.0.1:5000; # 确保 Flask 应用正在运行并监听在5000端口
         include proxy_params;
         proxy_redirect off;
         proxy_set_header X-Forwarded-Proto $scheme;
@@ -159,9 +159,15 @@ server {
 
     # 网站根目录的请求仍然按原来的方式处理
     location / {
-        root /var/www/zhangyiyang.xyz;
+        root /home/zyy/Desktop/zyy/CODE/websites/zhangyiyang_xyz/docs;
         index index.html;
     }
+}
+
+server {
+    listen 80;
+    server_name zhangyiyang.xyz www.zhangyiyang.xyz;
+    return 301 https://$host$request_uri;
 }
 ```
 检查Nginx服务状态:
@@ -206,6 +212,12 @@ sudo killall -HUP mDNSResponder
 ## macOS终端快捷键
 `control + A` 光标移至行首
 `control + E` 光标移至行尾
+
+## macOS性能监测命令(可查看游戏帧率、分辨率、CPU、GPU、内存占用等信息)
+```bash
+MTL_HUD_ENABLED=1 open [需要监测的应用程序路径]
+
+```
 
 ## Windows终端代理命令
 
