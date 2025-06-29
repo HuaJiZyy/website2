@@ -256,6 +256,7 @@ int main(){
     v.push_back(2);
     v.push_back(3);
     v.pop_back();                       //删除最后一个元素
+    v.insert(v.begin(), 4);             // 在数组的开头添加一个元素, 值为4
     for(int i=0;i<v.size();i++){        //v.size()为数组长度
         cout<<v[i]<<endl;
     }
@@ -353,4 +354,14 @@ PRINT_MSG2("Hello World"); //两者输出相同
 #define SET2(arg) Aarg=arg;
 SET1(1); //宏替换为 A1=1;
 SET2(1); //宏替换为 Aarg=1;
+
+28.分支结构
+if (条件1) {
+    // 条件1为真
+} else if (条件2) {
+    // 条件2为真
+} else {
+    // 以上条件都为假
+}
+
 ```

@@ -30,7 +30,7 @@
     * [关于长者](personal_Notes/about_him/)
     * [Word字号转换](personal_Notes/font_size/)
     * [关于游戏](personal_Notes/about_game/)
-    * [About Diversity](personal_Notes/about_diversity/)
+    <!-- * [About Diversity](personal_Notes/about_diversity/) -->
 - **Tools**
     * [晚上吃什么](Tools/Dinner/)
     * [GPA Calculator](Tools/GPA_calculator/)
