@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="/vue.css"> 
+  <link rel="stylesheet" href="/vue.css">
   <!-- 使用我自己的css文件 -->
 
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"> -->
@@ -16,6 +16,84 @@
   <link rel="icon" type="image/png" href="icon.png">
   <!-- 更改网站icon -->
 
+  <!-- 将 Gitalk CSS 移到这里 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <!-- 添加自定义 Gitalk 样式 -->
+  <style>
+    /* Gitalk 容器样式 */
+    #gitalk-container {
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Gitalk 主体区域 */
+    .gt-container {
+      padding: 15px !important;
+    }
+
+    /* 评论框样式 */
+    .gt-header-textarea {
+      border-radius: 6px !important;
+      border: 1px solid #d1d5da !important;
+      padding: 12px !important;
+    }
+
+    /* 按钮样式 */
+    .gt-btn-public {
+      border-radius: 6px !important;
+      padding: 8px 16px !important;
+    }
+
+    /* 评论列表样式 */
+    .gt-comment-content {
+      padding: 10px !important;
+      background-color: white !important;
+      border-radius: 6px !important;
+      /*圆角半径*/
+      margin: 10px 20 !important;
+    }
+
+    /* 评论内容、用户名、时间整体向右缩进 */
+    .gt-comment-body {
+      margin-left: 20px !important;
+      /* 向右移动 40px */
+    }
+
+    /* 评论头部信息（用户名、时间）也向右缩进 */
+    .gt-comment-header {
+      margin-left: 20px !important;
+      /* 向右移动 40px */
+    }
+
+    /* 登录区域样式 */
+    .gt-header-controls-tip {
+      padding: 20px !important;
+      text-align: center !important;
+      background-color: #fff !important;
+      border-radius: 6px !important;
+      margin: 10px 0 !important;
+    }
+
+    /* 取消 markdown 支持提示的内边距 */
+    .gt-header-controls .gt-header-controls-tip {
+      padding: 5px 0 !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      #gitalk-container {
+        padding: 15px;
+        margin: 15px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -29,13 +107,23 @@
       // themeColor: '#FFC0CB', // 粉色
       // logo: 'icon.svg',
       mergeNavbar: true,  //小屏设备合并导航栏到侧边栏
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      // formatUpdated: '{MM}/{DD} {HH}:{mm}',
       formatUpdated: function (time) {
         return time;
       },
       notFoundPage: true,
       loadNavbar: true,
       externalLinkTarget: '_self', // default: '_blank'
+
+      // 删除整个 plugins 数组，替换为 Valine 配置
+      Valine: {
+        appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
+        appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
+        placeholder: '请输入评论内容...',
+        avatar: 'wavatar',
+        visitor: true,
+        serverURLs: 'https://stxvknxw.api.lncldglobal.com'
+      },
 
       // 页脚
       // plugins: [
@@ -54,6 +142,48 @@
       //   }
       // ]
 
+      // plugins: [
+      //   function (hook, vm) {
+      //     hook.doneEach(function () {
+      //       // 更好的路径处理方式
+      //       var path = vm.route.path || '/';
+      //       console.log("完整路径:", path);
+
+      //       // 生成更准确的 ID
+      //       var cleanId;
+      //       if (path === '/' || path === '') {
+      //         cleanId = 'home';
+      //       } else {
+      //         // 移除开头的斜杠，用连字符替换斜杠
+      //         cleanId = path.replace(/^\//, '').replace(/\//g, '-').replace(/[^a-zA-Z0-9\-_]/g, '-').substring(0, 50);
+      //       }
+
+      //       console.log("生成的ID:", cleanId);
+
+      //       var existingContainer = document.getElementById("gitalk-container");
+      //       if (existingContainer) {
+      //         existingContainer.remove();
+      //       }
+
+      //       var divEle = document.createElement("div");
+      //       divEle.id = "gitalk-container";
+      //       document.querySelector(".content").appendChild(divEle);
+
+      //       var gitalkInstance = new Gitalk({
+      //         clientID: 'Ov23liXnrVt1PSUqZAzF',
+      //         clientSecret: 'c00269644823a34601c20107cbd52f347bb8d5bf',
+      //         repo: 'website2',
+      //         owner: 'HuaJiZyy',
+      //         admin: ['HuaJiZyy'],
+      //         id: cleanId,
+      //         distractionFreeMode: false,
+      //         createIssueManually: false
+      //       });
+      //       gitalkInstance.render("gitalk-container");
+      //     });
+      //   }
+      // ],
+
       loadFooter: 'footer.md',
       auto2top: true,
       customPageTitle: {
@@ -71,25 +201,30 @@
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
   <!-- 这是原有的css文件 -->
 
-  <script src="/docsify.min.js"></script> 
+  <script src="/docsify.min.js"></script>
   <!-- 使用我自己的css文件 -->
+
+  <!-- Valine JS -->
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
+
+  <!-- Gitalk JS -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
 
 </body>
 
 </html>
 
 <!-- 以下为gittalk代码 -->
-<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
 
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-<script>
+<!-- <script>
   const gitalk = new Gitalk({
-    clientID: 'Github Application Client ID',
-    clientSecret: 'Github Application Client Secret',
-    repo: 'Github repo',
-    owner: 'Github repo owner',
-    admin: ['Github repo collaborators, only these guys can initialize github issues'],
+    clientID: 'Ov23liXnrVt1PSUqZAzF',
+    clientSecret: 'c00269644823a34601c20107cbd52f347bb8d5bf',
+    repo: 'website2',
+    owner: 'HuaJiZyy',
+    admin: ['HuaJiZyy'],
     // facebook-like distraction free mode
     distractionFreeMode: false
   })

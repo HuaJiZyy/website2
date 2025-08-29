@@ -65,7 +65,7 @@ function spinRectangles() {
             const winningRectangle = rectangleContainer.children[currentIndex];
             winningRectangle.classList.add('highlight');
             setTimeout(() => {
-                alert(`今晚吃: ${winningRectangle.textContent} !`);
+                alert(`今晚吃: ${winningRectangle.textContent}!`);
                 isSpinning = false; // 设置为抽奖结束
             }, 300);
         }
