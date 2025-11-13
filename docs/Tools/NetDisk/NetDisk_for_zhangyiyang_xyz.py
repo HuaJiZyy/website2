@@ -8,7 +8,7 @@ app = Flask(__name__) # 创建了一个 Flask 实例
 app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024
 
 # 这里设置了一个常量 UPLOAD_FOLDER，用来指定上传文件存储的文件夹名称。然后将这个路径配置到 Flask 应用的配置中，方便后续引用。
-UPLOAD_FOLDER = '/home/zyy/Desktop/zyy/CODE/websites/zhangyiyang_xyz/docs/Tools/NetDisk/upload_files'
+UPLOAD_FOLDER = '~/zhangyiyangxyz/files/netdisk'
 UPLOAD_FOLDER = os.path.expanduser(UPLOAD_FOLDER)  # 展开 ~ 为用户的家目录
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 

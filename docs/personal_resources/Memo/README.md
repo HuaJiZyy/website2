@@ -6,8 +6,6 @@
 
 退出插入模式：按 Esc 键退出插入模式并返回到正常模式。
 
-保存修改：在正常模式下，输入 :w 然后按 Enter 键保存你的修改。
-
 退出 Vim：在正常模式下，输入 :q 然后按 Enter 键退出 Vim。如果你在没有保存的情况下尝试退出，Vim 会警告你。此时，你可以输入 :q! 强制退出（但这样会丢失所有未保存的修改），或输入 :wq 保存修改并退出。
 
 ### 可视行模式
@@ -20,6 +18,8 @@
 例如，如果你想复制当前行到下一行，你可以在正常模式下按 `V` 进入可视行模式，然后按 `y` 复制选择的行，最后按 `p` 粘贴复制的行。
 
 > 撤销`u`, 重做`control + r`
+
+> 替换整个文件的内容: 按 gg 跳到文件开头, 按 dG 删除所有内容, 按 i 进入插入模式, 最后粘贴即可.
 
 ## Linux常用命令
 
@@ -60,7 +60,7 @@ chmod 777 filename
 ### rsync
 
 ```bash
-rsync -avz --progress /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/ root@66.135.29.181:/var/www/zhangyiyang.xyz
+rsync -avz --progress /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/ root@139.180.143.158:~/zhangyiyangxyz
 ```
 
 这里：
@@ -73,9 +73,9 @@ rsync -avz --progress /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/
 - `server_ip` 是您Linux服务器的IP地址。
 - `/path/to/remote/folder` 是服务器上的目标文件夹路径。
 
-`rsync` 是非常灵活的，其行为取决于你如何指定源路径和目标路径。如果您想要将整个文件夹连同文件夹本身一起复制到目标路径，需要在源路径后面加上斜杠 `/`。这里有两种情况：
+`rsync` 是非常灵活的，其行为取决于你如何指定源路径和目标路径。源路径后面是否加斜杠 `/` 会影响复制行为：
 
-1. 如果您不在源文件夹的路径后面加上斜杠 `/`，`rsync` 会复制文件夹内的内容到目标路径，而不是复制文件夹本身。
+1. 如果您在源文件夹的路径后面**加上斜杠 `/`**，`rsync` 会复制文件夹**内的内容**到目标路径，而不是复制文件夹本身。
 
    ```bash
    rsync -av /path/to/source_folder/ /path/to/destination_folder/
@@ -83,13 +83,13 @@ rsync -avz --progress /Users/zyy/Desktop/zyy/CODE/Github/website2/website2/docs/
 
    在这个例子中，`source_folder` 内的所有内容（而不是 `source_folder` 文件夹本身）会被复制到 `destination_folder` 中。
 
-2. 如果您在源文件夹的路径后面加上斜杠 `/`，`rsync` 会复制整个文件夹到目标路径。
+2. 否则，`rsync` 会复制**整个文件夹**到目标路径。
 
    ```bash
    rsync -av /path/to/source_folder /path/to/destination_folder/
    ```
 
-   在这个例子中，`source_folder` 本身及其所有内容会被复制到 `destination_folder` 中。
+   在这个例子中，`source_folder` 本身及其所有内容会被复制到 `destination_folder` 中，结果是 `destination_folder/source_folder/`。
 
 ### scp
 `scp` 是 Secure Copy（安全复制）的缩写，是基于 SSH (Secure Shell) 的一种网络协议，用于在本地主机和远程主机之间，或两个远程主机之间安全地传输文件。`scp` 命令是在 Linux 和 macOS 系统中常用的一个命令行工具，也可以在 Windows 上通过某些应用程序（如 Putty）使用。
