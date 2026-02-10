@@ -4,6 +4,12 @@
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
 
+- **工具**
+    * [晚上吃什么](Tools/Dinner/)
+    * [GPA Calculator](Tools/GPA_calculator/)
+    * [Split Bill Calculator](Tools/AA_calculator/)
+    * [Old Warehouse Cloud Storage](Tools/NetDisk/)
+    * [Cloud Clipboard](Tools/Clipboard/)
 
 - **学习随记**
     * **- 转载**
@@ -31,11 +37,6 @@
     * [Word字号转换](personal_Notes/font_size/)
     * [关于游戏](personal_Notes/about_game/)
     <!-- * [About Diversity](personal_Notes/about_diversity/) -->
-- **Tools**
-    * [晚上吃什么](Tools/Dinner/)
-    * [GPA Calculator](Tools/GPA_calculator/)
-    * [Split Bill Calculator](Tools/AA_calculator/)
-    * [Old Warehouse Cloud Storage (Beta)](Tools/NetDisk/)
 - **菜谱**
     * [辣炒花蚬子](Recipes/spicy_clam/)
     * [番茄肉酱意面(Beta)](Recipes/Spaghetti_with_meat_sauce/)
