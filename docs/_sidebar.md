@@ -6,10 +6,10 @@
 
 - **工具**
     * [晚上吃什么](Tools/Dinner/)
-    * [GPA Calculator](Tools/GPA_calculator/)
-    * [Split Bill Calculator](Tools/AA_calculator/)
-    * [Old Warehouse Cloud Storage](Tools/NetDisk/)
-    * [Cloud Clipboard](Tools/Clipboard/)
+    * [GPA计算器](Tools/GPA_calculator/)
+    * [团建分账计算器](Tools/AA_calculator/)
+    * [老仓库网盘](Tools/NetDisk/)
+    * [在线剪贴板](Tools/Clipboard/)
 
 - **学习随记**
     * **- 转载**
@@ -35,7 +35,7 @@
     * [关于智能家居](personal_Notes/smart_home/)
     * [关于长者](personal_Notes/about_him/)
     * [Word字号转换](personal_Notes/font_size/)
-    * [关于游戏](personal_Notes/about_game/)
+    <!-- * [关于游戏](personal_Notes/about_game/) -->
     <!-- * [About Diversity](personal_Notes/about_diversity/) -->
 - **菜谱**
     * [辣炒花蚬子](Recipes/spicy_clam/)

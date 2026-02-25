@@ -4,15 +4,13 @@ import random
 import string
 
 app = Flask(__name__)
-DATA_DIR_NAME = 'clipboard_data'
 
-# 获取当前脚本所在目录
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR_PATH = os.path.join(BASE_DIR, DATA_DIR_NAME)
+# 设置数据存储目录为 ~/zhangyiyangxyz/files/clipboard_data
+DATA_DIR_PATH = os.path.expanduser('~/zhangyiyangxyz/files/clipboard_data')
 
 # 确保数据目录存在
 if not os.path.exists(DATA_DIR_PATH):
-    os.makedirs(DATA_DIR_PATH)
+    os.makedirs(DATA_DIR_PATH, exist_ok=True)
 
 HTML_CONTENT = """
 <!DOCTYPE html>
@@ -20,14 +18,14 @@ HTML_CONTENT = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>云剪贴板</title>
+    <title>在线剪贴板</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
         .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         h1 { margin-top: 0; color: #333; text-align: center; }
         .input-group { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; justify-content: center; }
         .input-group input { padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; width: 120px; text-align: center; letter-spacing: 2px;}
-        textarea { width: 100%; box-sizing: border-box; height: 50vh; margin-bottom: 20px; padding: 15px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace;}
+        textarea { width: 100%; box-sizing: border-box; height: 300px; max-height: 50vh; margin-bottom: 20px; padding: 15px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; resize: none; font-family: monospace;}
         .btn-container { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: center; }
         button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 4px; transition: background 0.3s; }
         button.primary { background-color: #007bff; color: white; }
@@ -43,31 +41,31 @@ HTML_CONTENT = """
 </head>
 <body>
     <div class="container">
-        <h1>☁️ 云剪贴板 (Cloud Clipboard)</h1>
+        <h1>在线剪贴板</h1>
         
         <div class="help-text">输入取件码提取内容，或输入内容点击保存生成取件码</div>
 
         <div class="input-group">
-            <input type="text" id="code-input" placeholder="取件码" maxlength="4">
-            <button class="primary" onclick="retrieveContent()">提取内容 (Get)</button>
+            <input type="text" id="code-input" placeholder="取件码..." maxlength="4">
+            <button class="primary" onclick="retrieveContent()">提取内容</button>
         </div>
 
         <textarea id="content" placeholder="在此输入内容..."></textarea>
         
         <div class="btn-container">
-            <button class="success" onclick="saveContent()">保存并生成取件码 (Save)</button>
-            <button class="secondary" onclick="copyContent()">复制 (Copy)</button>
-            <button class="secondary" onclick="clearContent()">清空 (Clear)</button>
+            <button class="success" onclick="saveContent()">保存并生成取件码</button>
+            <button class="secondary" onclick="copyContent()">复制</button>
+            <button class="secondary" onclick="clearContent()">清空</button>
         </div>
         <span id="status">Ready</span>
     </div>
     <script>
-        const API_URL = '/api/clipboard';
+        const API_URL = '/clipboard/api';
 
         async function retrieveContent() {
             const code = document.getElementById('code-input').value.trim();
             if (!code) {
-                showStatus('⚠️ 请先输入取件码', true);
+                showStatus('请先输入取件码', true);
                 return;
             }
             showStatus('正在提取...', false);
@@ -76,20 +74,20 @@ HTML_CONTENT = """
                 const data = await res.json();
                 if (res.ok && data.found) {
                     document.getElementById('content').value = data.content;
-                    showStatus('✅ 提取成功', true);
+                    showStatus('🥰提取成功', true);
                 } else {
-                    showStatus('❌ 未找到该取件码的内容', true);
+                    showStatus('未找到该取件码的内容', true);
                 }
             } catch (e) {
                 console.error(e);
-                showStatus('❌ 连接失败', true);
+                showStatus('连接失败', true);
             }
         }
 
         async function saveContent() {
             const content = document.getElementById('content').value;
             if (!content) {
-                showStatus('⚠️ 内容不能为空', true);
+                showStatus('内容不能为空', true);
                 return;
             }
             showStatus('正在保存...', false);
@@ -102,14 +100,14 @@ HTML_CONTENT = """
                 const data = await res.json();
                 if (data.status === 'success') {
                     document.getElementById('code-input').value = data.code;
-                    showStatus(`✅ 保存成功! 取件码: ${data.code}`, false); 
-                    alert(`保存成功！\\n您的取件码是：${data.code}\\n请记住此号码用于在其他设备提取内容。`);
+                    showStatus(`🥰保存成功! 取件码: ${data.code}`, false); 
+                    alert(`🥰保存成功！\\n取件码：${data.code}`);
                 } else {
-                    showStatus('❌ 保存失败', true);
+                    showStatus('保存失败', true);
                 }
             } catch (e) {
                 console.error(e);
-                showStatus('❌ 保存失败', true);
+                showStatus('保存失败', true);
             }
         }
 
@@ -119,9 +117,9 @@ HTML_CONTENT = """
             copyText.setSelectionRange(0, 99999); 
             
             navigator.clipboard.writeText(copyText.value).then(() => {
-                showStatus('📋 已复制', true);
+                showStatus('已复制', true);
             }, (err) => {
-                showStatus('❌ 复制失败', true);
+                showStatus('复制失败', true);
             });
         }
         
@@ -152,11 +150,11 @@ def generate_code():
         if not os.path.exists(os.path.join(DATA_DIR_PATH, f"{code}.txt")):
             return code
 
-@app.route('/')
+@app.route('/clipboard/')
 def index():
     return HTML_CONTENT
 
-@app.route('/api/clipboard', methods=['GET'])
+@app.route('/clipboard/api', methods=['GET'])
 def get_clipboard():
     code = request.args.get('code')
     if not code:
@@ -176,7 +174,7 @@ def get_clipboard():
     else:
         return jsonify({"found": False, "message": "Code not found"}), 404
 
-@app.route('/api/clipboard', methods=['POST'])
+@app.route('/clipboard/api', methods=['POST'])
 def update_clipboard():
     data = request.json
     content = data.get('content', '')
