@@ -29,7 +29,7 @@ let cannot_start_flag = false;
 
 //抽奖
 function spinRectangles() {
-    if (options.length == 1) {
+    if (options.length <= 1) {
         alert(`至少添加两个选项哦!`)
         return;
     }

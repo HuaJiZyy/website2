@@ -57,7 +57,7 @@ HTML_CONTENT = """
             <button class="secondary" onclick="copyContent()">复制</button>
             <button class="secondary" onclick="clearContent()">清空</button>
         </div>
-        <span id="status">Ready</span>
+        <span id="status"></span>
     </div>
     <script>
         const API_URL = '/clipboard/api';
