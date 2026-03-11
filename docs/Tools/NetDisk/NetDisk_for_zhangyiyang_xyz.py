@@ -5,7 +5,7 @@ import os
 app = Flask(__name__) # 创建了一个 Flask 实例
 
 # 设置最大上传文件大小为1000MB
-app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 2000 * 1024 * 1024
 
 # 这里设置了一个常量 UPLOAD_FOLDER，用来指定上传文件存储的文件夹名称。然后将这个路径配置到 Flask 应用的配置中，方便后续引用。
 UPLOAD_FOLDER = '~/zhangyiyangxyz/files/netdisk'

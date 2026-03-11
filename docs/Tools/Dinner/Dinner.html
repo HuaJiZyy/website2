@@ -18,6 +18,18 @@
         </form>
         <div id="rectangle-container" class="rectangle-container"></div> <!-- 一个用于显示内容的矩形容器，具体内容和样式由CSS定义 -->
         <button type="button" id="draw-button" class="button my-button-danger">替我做决定吧!</button> <!-- 应用特定按钮样式 -->
+
+        <!-- 切换历史记录面板按钮(小字) -->
+        <div class="toggle-history-container">
+            <span id="toggle-history">历史记录</span>
+        </div>
+
+        <!-- 历史记录区域 -->
+        <div class="history-section" id="history-section">
+            <h2 id="history-title">历史记录</h2>
+            <ul id="history-list"></ul>
+            <p class="local-storage-note">历史记录只保存在本地</p>
+        </div>
     </div>
     <script src="script.js"></script> <!-- 链接外部JavaScript文件，用于添加页面的交互功能 -->
 </body>

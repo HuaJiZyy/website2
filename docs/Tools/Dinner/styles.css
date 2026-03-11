@@ -106,3 +106,85 @@ button:disabled {
     background-color: #f1c40f;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
+/* 历史记录功能样式 */
+.toggle-history-container {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+#toggle-history {
+    font-size: 0.8rem;
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#toggle-history:hover {
+    color: #333;
+}
+
+.history-section {
+    display: none; /* 默认不显示 */
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+    text-align: center;
+}
+
+.history-section h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.local-storage-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+#history-list li {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+
+.history-options {
+    font-size: 0.8rem;
+    color: #666;
+    word-break: break-all;
+}
+
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+.history-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.history-result {
+    font-weight: bold;
+    color: #dc3545;
+}
