@@ -114,7 +114,7 @@ int gcd(int a, int b) {
 }
 ```
 <!-- <iframe src="//player.bilibili.com/player.html?aid=717731278&bvid=BV1KQ4y127AT&cid=399440988&page=1" height="500" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
-> 欧几里得算法的几何表示和证明过程都很简单, 故略去. 详细可参考: https://www.bilibili.com/video/BV19r4y127fu
+> 欧几里得算法的几何表示和证明过程都很简单, 故略去. 详细可参考: <a href="https://www.bilibili.com/video/BV19r4y127fu" target="_blank">https://www.bilibili.com/video/BV19r4y127fu</a>
 
 #### 2.2 拓展欧几里得定理求逆元
 
@@ -248,4 +248,4 @@ x'= 2 y'=-5, 回溯(1), 得: x=y'=-5 y=x'-[a/b]*y'=937
 
 ```
 **解得d=937为所求.**
-> [关于逆元的更多拓展知识](https://zhuanlan.zhihu.com/p/449221995)
+> <a href="https://zhuanlan.zhihu.com/p/449221995" target="_blank">关于逆元的更多拓展知识</a>

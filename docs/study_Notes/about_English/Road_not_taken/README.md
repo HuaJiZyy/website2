@@ -46,4 +46,4 @@ Thompson suggests that the poem's narrator is "one who habitually wastes energy 
 
 !> Our choices are made clear in hindsight.
 
-> 更多信息: https://en.wikipedia.org/wiki/The_Road_Not_Taken
+> 更多信息: <a href="https://en.wikipedia.org/wiki/The_Road_Not_Taken" target="_blank">https://en.wikipedia.org/wiki/The_Road_Not_Taken</a>

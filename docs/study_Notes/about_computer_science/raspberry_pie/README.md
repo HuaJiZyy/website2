@@ -4,7 +4,7 @@
 
 2023.2 在闲鱼购入了一台树莓派zero 2 w. 其性能和树莓派3B相近, 但是扩展接口极少, 只有两个过时的micro USB接口, 一个mini HDMI(甚至不是标准HDMI)接口. 手边既没有屏幕也没有蓝牙键鼠, 只能在完全无线的情况下配置.
 
-首先, 需要一个SD卡做硬盘, 不低于8GB即可. 在电脑(以Mac为例)上安装[Raspberry Pi Imager]( https://www.raspberrypi.com/software/)后, 即可进行系统的烧录.
+首先, 需要一个SD卡做硬盘, 不低于8GB即可. 在电脑(以Mac为例)上安装<a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager</a>后, 即可进行系统的烧录.
 
 打开Imager软件, 首先选择系统:  
 ![img](1.png ':size=60%')  

@@ -1,22 +1,23 @@
 > 个人链接:
 
-* [bilibili](https://space.bilibili.com/363122611)
+* <a href="https://space.bilibili.com/363122611" target="_blank">bilibili</a>
 
 <!-- * [豆瓣](https://www.douban.com/people/193538245/?_i=0604220lY7wWU_) -->
 
 <!-- * [Facebook](https://www.facebook.com/HuaJiZyy/) -->
 
-* [STEAM](https://steamcommunity.com/id/zyyjyw/)
+<!-- * [STEAM](https://steamcommunity.com/id/zyyjyw/) -->
+* <a href="https://steamcommunity.com/id/zyyjyw/" target="_blank">STEAM</a>
 
-* [Twitter](https://twitter.com/HuaJiZyy)
+* <a href="https://twitter.com/HuaJiZyy" target="_blank">Twitter</a>
 
-* [知乎](https://www.zhihu.com/people/zyy-50-79)
+* <a href="https://www.zhihu.com/people/zyy-50-79" target="_blank">知乎</a>
 
 <!-- * [淘宝店](https://shop210292260.taobao.com/) -->
 
-* [小红书](https://www.xiaohongshu.com/user/profile/5fe8160f00000000010006e1)
+* <a href="https://www.xiaohongshu.com/user/profile/5fe8160f00000000010006e1" target="_blank">小红书</a>
 
-* [新浪微博](https://weibo.com/u/6458074209)
+* <a href="https://weibo.com/u/6458074209" target="_blank">新浪微博</a>
 
 * 邮箱  
     * zyyjyw@gmail.com  

@@ -42,8 +42,9 @@ R U' R' U' R U R D R' U' R D' R' U2 R' U'
 ![img](1.png ':size=40%')  
 <!-- <img src="1.jpeg" style="zoom:50%"> -->
 
+
 角块缓冲位置：A&E&R  
-![img](2.png ':size=40%')  
+![img](2.png ':size=40%') 
 <!-- <img src="./2.jpeg"  style="zoom: 33%;" /> -->
 
 
@@ -115,4 +116,4 @@ X: D2
 ![img](3心路历程.jpeg ':size=60%')
 
 
-> 更多信息请参考: https://jperm.net/bld
+> 更多信息请参考: <a href="https://jperm.net/bld" target="_blank">https://jperm.net/bld</a>

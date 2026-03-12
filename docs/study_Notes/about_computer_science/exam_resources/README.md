@@ -1,18 +1,18 @@
 ## 考试资源 <!-- {docsify-ignore} -->
 
-- 国内CS考研真题集
+- 国内计算机与软件考研真题集
 
-  > [计算机与软件考研](https://github.com/csseky/cskaoyan)
+  > <a href="https://github.com/csseky/cskaoyan" target="_blank">https://github.com/csseky/cskaoyan</a>
 
   包含绝大多数国内双一流高校的考研资料。
 
-- 大连理工大学考研资料
+- 大连理工大学计算机考研资料
 
-  > [蓝奏云下载](https://wwxv.lanzoul.com/iXqIq0sen8uj)
+  > <a href="https://wwxv.lanzoul.com/iXqIq0sen8uj" target="_blank">蓝奏云下载</a>
 
 - 软件工程期末突击知识点(适用于大连理工大学王凡老师)
 
-  > https://www.bilibili.com/read/cv16732542
+  > <a href="https://www.bilibili.com/read/cv16732542/" target="_blank">https://www.bilibili.com/read/cv16732542/</a>
 
 
 > 既然你都翻到这了, 就请你看一只可爱的小猫吧!

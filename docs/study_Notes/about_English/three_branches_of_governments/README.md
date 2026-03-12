@@ -51,4 +51,4 @@ The U.S. federal government is divided into three independent and inter-checking
 
 This system of checks and balances is designed to ensure that power is not concentrated in a single institution and to maintain the stability of the political system through mutual checks among the branches. The President, as the head of the executive branch, ensures that laws are properly enforced and has the power to veto legislation passed by the legislative branch.
 
-> 视频来源: https://www.flocabulary.com/unit/3-branches-of-government/
+> 视频来源: <a href="https://www.flocabulary.com/unit/3-branches-of-government/" target="_blank">https://www.flocabulary.com/unit/3-branches-of-government/</a>

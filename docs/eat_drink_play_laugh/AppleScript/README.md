@@ -93,4 +93,3 @@ end run
     3. 系统级快捷键可能和应用内快捷键发生冲突, 而前者的优先级低于后者.
     
 >   以上过程基于Macos Ventura 13.1.  
-    参考资料: https://github.com/yichengchen/clashX/blob/master/Shortcuts.md

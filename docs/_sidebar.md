@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 * [**首页**](/)
+* [**留言板**](/message_board/)
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)
     * [我不想爬](climb/IWantClimbing) -->
@@ -20,7 +21,7 @@
         * [The Road Not Taken](study_Notes/about_English/Road_not_taken/)
         * [视频资源](study_Notes/about_English/three_branches_of_governments/)
     * **- 关于计算机科学**
-        * [密码学](study_Notes/about_computer_science/cipher/)
+        * [信息安全考前简记](study_Notes/about_computer_science/cipher/)
         * [学习资源](study_Notes/about_computer_science/study_resources/)
         * [考试资源](study_Notes/about_computer_science/exam_resources/)
         * [树莓派配置(Beta)](study_Notes/about_computer_science/raspberry_pie/)

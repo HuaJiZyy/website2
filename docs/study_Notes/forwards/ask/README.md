@@ -7,7 +7,8 @@ Copyright © 2001,2006,2014 Eric S. Raymond, Rick Moen
 
 本指南英文版版权为 Eric S. Raymond, Rick Moen 所有。
 
-> 原文链接: [http://www.catb.org/~esr/faqs/smart-questions.html](http://www.catb.org/~esr/faqs/smart-questions.html)
+> 原文链接: <a href="http://www.catb.org/~esr/faqs/smart-questions.html" target="_blank">http://www.catb.org/~esr/faqs/smart-questions.html</a>
+
 ## 目录
   * [声明](#声明)
   * [简介](#简介)

@@ -16,8 +16,8 @@
   <link rel="icon" type="image/png" href="icon.png">
   <!-- 更改网站icon -->
 
-  <!-- 将 Gitalk CSS 移到这里 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <!-- Gitalk CSS  -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"> -->
   <!-- 添加自定义 Gitalk 样式 -->
   <style>
     /* Gitalk 容器样式 */
@@ -119,14 +119,37 @@
       externalLinkTarget: '_self', // default: '_blank'
 
       // 删除整个 plugins 数组，替换为 Valine 配置
-      Valine: {
-        appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
-        appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
-        placeholder: '欢迎留言! 请输入留言内容',
-        avatar: 'wavatar',
-        visitor: true,
-        serverURLs: 'https://stxvknxw.api.lncldglobal.com'
-      },
+      // Valine: {
+      //   appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
+      //   appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
+      //   placeholder: '欢迎留言! 请输入留言内容',
+      //   avatar: 'wavatar',
+      //   visitor: true,
+      //   serverURLs: 'https://stxvknxw.api.lncldglobal.com'
+      // },
+
+      plugins: [
+      function(hook, vm) {
+        hook.doneEach(function() {
+          // 只在当前页面中存在 id 为 'vcomments' 的容器时才渲染 Valine
+          var vcomments = document.getElementById('vcomments');
+          if (vcomments) {
+            new Valine({
+              el: '#vcomments',
+              appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
+              appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
+              placeholder: '欢迎留言! 请输入留言内容',
+              avatar: 'wavatar',
+              visitor: true,
+              serverURLs: 'https://stxvknxw.api.lncldglobal.com',
+              // 将 path 强制设为一个固定的值（例如 '/guestbook/'）
+              // 这样所有留言最终都归属到这个指定的标识下
+              path: '/message_board/' 
+            });
+          }
+        });
+      }
+    ],
 
       // 页脚
       // plugins: [
@@ -209,11 +232,13 @@
 
   <!-- Valine JS -->
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
+
+  <!-- docsify-valine插件 -->
+  <!-- <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script> -->
 
   <!-- Gitalk JS -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script> -->
 
 </body>
 

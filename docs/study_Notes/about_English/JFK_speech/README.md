@@ -153,4 +153,4 @@ denunciation n. 谴责
 surrender / submission n. 投降  
 vindicate v. 证明 (vindication n. 证明)  
 
-> 演讲原音频: https://www.youtube.com/watch?v=EgdUgzAWcrw
+> 演讲原音频: <a href="https://www.youtube.com/watch?v=EgdUgzAWcrw" target="_blank">https://www.youtube.com/watch?v=EgdUgzAWcrw</a>

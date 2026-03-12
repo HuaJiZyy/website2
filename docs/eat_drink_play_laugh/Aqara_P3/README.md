@@ -16,9 +16,9 @@
 
 如果已经使用过，需要先快按按键十下恢复出厂设置， 听到语音“恢复出厂设置成功”之后10秒内，**连按按键两下(动作要快)** 才可切换平台。恢复出厂设置，将清除所有使用数据，包括已添加的所有子设备.
 
-切换到米家APP平台： [切换到米家APP平台_腾讯视频](https://v.qq.com/x/page/k3210y12wy8.html)
+切换到米家APP平台：<a href="https://v.qq.com/x/page/k3210y12wy8.html" target="_blank">切换到米家APP平台_腾讯视频</a>
 
-切换到Aqara home平台：[切换到Aqara Home平台_腾讯视频](https://v.qq.com/x/page/k3210y12wy8.html)
+切换到Aqara home平台：<a href="https://v.qq.com/x/page/b3210rbplq4.html" target="_blank">切换到Aqara Home平台_腾讯视频</a>
 
 (视频由淘宝客服给出)
 
