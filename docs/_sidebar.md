@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
-* [**首页**](/)
+* [**首页**](/ "张义洋的个人主页")
 * [**留言板**](/message_board/)
     <!-- * [慢慢爬](climb/)
     * [飞快地爬](climb/climbing)

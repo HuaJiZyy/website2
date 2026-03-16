@@ -6,6 +6,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
 
+  <!-- SEO 相关配置 -->
+  <!-- 描述标签：当别人在Google搜到你的网站时，大标题下面显示的那两行灰色介绍文字 -->
+  <meta name="description" content="张义洋的个人网站。快进入老仓库的角落!">
+  <!-- 关键词标签：列出几个你希望被搜索到的高频词（虽然现在搜索引擎权重降低了，但写上总没坏处） -->
+  <meta name="keywords" content="张义洋, zhangyiyang, 个人网站">
+  <!-- 作者信息 -->
+  <meta name="author" content="张义洋">
+
+  <!-- OG相关配置 -->
+  <meta property="og:title" content="张义洋的个人主页">
+  <meta property="og:type" content="website">
+  <!-- 这一行是大图片, 先注释掉 -->
+  <!-- <meta content="https://zhangyiyang.xyz/assets/website_assets/avatar_round.png" property="og:image" /> -->
+  <meta property="og:url" content="https://www.zhangyiyang.xyz">
+  <meta property="og:description" content="快进入老仓库的角落!">
+
+  <title>张义洋的个人主页</title>
+
   <link rel="stylesheet" href="/vue.css">
   <!-- 使用我自己的css文件 -->
 
@@ -118,97 +136,26 @@
       loadNavbar: true,
       externalLinkTarget: '_self', // default: '_blank'
 
-      // 删除整个 plugins 数组，替换为 Valine 配置
-      // Valine: {
-      //   appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
-      //   appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
-      //   placeholder: '欢迎留言! 请输入留言内容',
-      //   avatar: 'wavatar',
-      //   visitor: true,
-      //   serverURLs: 'https://stxvknxw.api.lncldglobal.com'
-      // },
-
       plugins: [
-      function(hook, vm) {
-        hook.doneEach(function() {
-          // 只在当前页面中存在 id 为 'vcomments' 的容器时才渲染 Valine
-          var vcomments = document.getElementById('vcomments');
-          if (vcomments) {
-            new Valine({
-              el: '#vcomments',
-              appId: 'stXvKNXwULxG3h1Su0XbdZP5-MdYXbMMI',
-              appKey: 'IoQHdZqToMsmW6RjeevrfAN5',
-              placeholder: '欢迎留言! 请输入留言内容',
-              avatar: 'wavatar',
-              visitor: true,
-              serverURLs: 'https://stxvknxw.api.lncldglobal.com',
-              // 将 path 强制设为一个固定的值（例如 '/guestbook/'）
-              // 这样所有留言最终都归属到这个指定的标识下
-              path: '/message_board/' 
-            });
-          }
-        });
-      }
-    ],
-
-      // 页脚
-      // plugins: [
-      //   function (hook) {
-      //     var footer = [
-      //       '<hr/>',
-      //       '<footer>',
-      //       '<span><a href="https://github.com/QingWei-Li">cinwell</a> &copy;2017.</span>',
-      //       '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
-      //       '</footer>'
-      //     ].join('');
-
-      //     hook.afterEach(function (html) {
-      //       return html + footer;
-      //     });
-      //   }
-      // ]
-
-      // plugins: [
-      //   function (hook, vm) {
-      //     hook.doneEach(function () {
-      //       // 更好的路径处理方式
-      //       var path = vm.route.path || '/';
-      //       console.log("完整路径:", path);
-
-      //       // 生成更准确的 ID
-      //       var cleanId;
-      //       if (path === '/' || path === '') {
-      //         cleanId = 'home';
-      //       } else {
-      //         // 移除开头的斜杠，用连字符替换斜杠
-      //         cleanId = path.replace(/^\//, '').replace(/\//g, '-').replace(/[^a-zA-Z0-9\-_]/g, '-').substring(0, 50);
-      //       }
-
-      //       console.log("生成的ID:", cleanId);
-
-      //       var existingContainer = document.getElementById("gitalk-container");
-      //       if (existingContainer) {
-      //         existingContainer.remove();
-      //       }
-
-      //       var divEle = document.createElement("div");
-      //       divEle.id = "gitalk-container";
-      //       document.querySelector(".content").appendChild(divEle);
-
-      //       var gitalkInstance = new Gitalk({
-      //         clientID: 'Ov23liXnrVt1PSUqZAzF',
-      //         clientSecret: 'c00269644823a34601c20107cbd52f347bb8d5bf',
-      //         repo: 'website2',
-      //         owner: 'HuaJiZyy',
-      //         admin: ['HuaJiZyy'],
-      //         id: cleanId,
-      //         distractionFreeMode: false,
-      //         createIssueManually: false
-      //       });
-      //       gitalkInstance.render("gitalk-container");
-      //     });
-      //   }
-      // ],
+        function (hook, vm) {
+          hook.doneEach(function () {
+            // 初始化 Waline (使用独立子域名)
+            var vcomments = document.getElementById('vcomments');
+            if (vcomments) {
+              import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+                init({
+                  el: '#vcomments',
+                  // 100% 干净无冲突的专属域名
+                  serverURL: 'https://comment.zhangyiyang.xyz', 
+                  path: '/message_board/',
+                  dark: 'auto',
+                  search: false
+                });
+              });
+            }
+          });
+        }
+      ],
 
       loadFooter: 'footer.md',
       auto2top: true,
@@ -230,11 +177,8 @@
   <script src="/docsify.min.js"></script>
   <!-- 使用我自己的css文件 -->
 
-  <!-- Valine JS -->
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-
-  <!-- docsify-valine插件 -->
-  <!-- <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script> -->
+  <!-- 引入 Waline CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 
   <!-- Gitalk JS -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script> -->
