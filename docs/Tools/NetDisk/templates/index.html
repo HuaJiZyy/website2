@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老仓库网盘</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: transparent; }
+        .container { background: transparent; padding: 30px; border-radius: 8px; text-align: center; }
+        h1 { margin-top: 0; color: #333; margin-bottom: 10px; }
+        .help-text { color: #888; margin-bottom: 25px; font-size: 0.95em; }
+        .upload-form { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        input[type="file"] { border: 1px solid #ddd; padding: 10px; border-radius: 4px; width: 100%; max-width: 300px; cursor: pointer; }
+        input[type="submit"] { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 4px; transition: background 0.3s; background-color: #007bff; color: white; width: 100%; max-width: 322px; font-weight: bold; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        #uploading { margin-top: 15px; color: #666; font-size: 14px; }
+    </style>
+    <script>
+        function onUpload() {
+            var fileInput = document.getElementById('file-input');
+            if (!fileInput.value) {
+                alert('请先选择需要上传的文件');
+                return false;
+            }
+            document.getElementById('submit').style.display = 'none';
+            document.getElementById('uploading').style.display = 'block';
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>老仓库网盘</h1>
+        <div class="help-text">一个链接, 轻松分享文件</div>
+        <form class="upload-form" method=post enctype=multipart/form-data action="/files/upload" onsubmit="return onUpload()">
+            <input id="file-input" type=file name=file>
+            <input id="submit" type=submit value="立即上传">
+            <p id="uploading" style="display: none;">文件正在上传，不许离开哦!</p>
+        </form>
+    </div>
+</body>
+</html>

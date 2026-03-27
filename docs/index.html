@@ -137,6 +137,7 @@
       externalLinkTarget: '_self', // default: '_blank'
 
       plugins: [
+        // Waline相关配置
         function (hook, vm) {
           hook.doneEach(function () {
             // 初始化 Waline (使用独立子域名)
@@ -146,10 +147,19 @@
                 init({
                   el: '#vcomments',
                   // 100% 干净无冲突的专属域名
-                  serverURL: 'https://comment.zhangyiyang.xyz', 
+                  serverURL: 'https://comment.zhangyiyang.xyz',
                   path: '/message_board/',
                   dark: 'auto',
-                  search: false
+                  search: false,
+                  meta: ['nick', 'mail'],
+                  locale: {
+                    nick: '昵称',
+                    placeholder: '欢迎留言...',
+                    mail: '邮箱(可用于获取头像)',
+                  },
+                  emoji: [
+                    'https://unpkg.com/@waline/emojis@1.1.0/bilibili'
+                  ],
                 });
               });
             }

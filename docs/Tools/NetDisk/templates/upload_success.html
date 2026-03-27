@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传成功 - 老仓库网盘</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: transparent; }
+        .container { background: transparent; padding: 30px; border-radius: 8px; text-align: center; }
+        h1 { margin-top: 0; color: #28a745; margin-bottom: 5px; }
+        .subtitle { color: #666; margin-bottom: 25px; }
+        .link-box { margin: 20px auto; padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px; word-break: break-all; max-width: 600px; }
+        .link-box a { color: #007bff; text-decoration: none; font-size: 16px; }
+        .link-box a:hover { text-decoration: underline; }
+        .btn-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 4px; transition: background 0.3s; }
+        .primary { background-color: #007bff; color: white; }
+        .primary:hover { background-color: #0056b3; }
+        .secondary { background-color: #6c757d; color: white; }
+        .secondary:hover { background-color: #545b62; }
+        .back-link { display: inline-block; margin-top: 25px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> 🥰文件上传成功！</h1>
+        <div class="subtitle">您的文件已安全存储</div>
+        
+        <div class="link-box">
+            <a href="/files/download/{{ filename }}">https://zhangyiyang.xyz/files/download/{{ filename }}</a>
+        </div>
+        
+        <div class="btn-container">
+            <button class="primary" onclick="window.location.href='/files/download/{{ filename }}'">立即下载</button>
+            <button class="secondary" id="copy-btn" onclick="copyLink()">复制分享链接</button>
+        </div>
+
+        <a href="/files" class="back-link">← 返回继续上传其他文件</a>
+    </div>
+
+    <script>
+        function copyLink() {
+            const link = 'https://zhangyiyang.xyz/files/download/{{ filename }}';
+            navigator.clipboard.writeText(link).then(() => {
+                const btn = document.getElementById('copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = '已复制！';
+                btn.style.backgroundColor = '#28a745'; // success color
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = '';
+                }, 5000);
+            }).catch(err => {
+                alert('复制失败，请手动复制链接');
+            });
+        }
+    </script>
+</body>
+</html>
